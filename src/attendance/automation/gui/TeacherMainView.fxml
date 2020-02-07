@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="445.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="attendance.automation.TeacherMainViewController">
+<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="445.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="attendance.automation.gui.TeacherMainViewController">
    <children>
       <Label layoutX="56.0" layoutY="67.0" prefHeight="54.0" prefWidth="331.0" text="WELCOME TEACHER">
          <font>

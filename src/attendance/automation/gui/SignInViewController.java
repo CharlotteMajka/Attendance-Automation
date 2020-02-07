@@ -39,6 +39,9 @@ public class SignInViewController implements Initializable
     @FXML
     private void handleSignIn(ActionEvent event)
     {
+        String code = password.getText();
+        label.setText(code);
+        
     }
 
     
