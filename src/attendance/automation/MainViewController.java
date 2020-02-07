@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 /**
@@ -21,8 +22,11 @@ public class MainViewController implements Initializable
     
     @FXML
     private Label label;
-    
     @FXML
+    private Button SwipeButton;
+    @FXML
+    private Button ForgotIdButton;
+    
     private void handleButtonAction(ActionEvent event)
     {
         System.out.println("You clicked me!");
@@ -34,5 +38,15 @@ public class MainViewController implements Initializable
     {
         // TODO
     }    
+
+    @FXML
+    private void handleSwipeIn(ActionEvent event)
+    {
+    }
+
+    @FXML
+    private void handleForgotId(ActionEvent event)
+    {
+    }
     
 }
