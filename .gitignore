@@ -51,3 +51,4 @@ mssql-jdbc*.jar
 *.mkv
 
 # End of https://www.gitignore.io/api/java,netbeans
+nbproject/private/private.properties
