@@ -7,7 +7,11 @@ package attendance.automation.gui;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -17,6 +21,11 @@ import javafx.fxml.Initializable;
 public class TeacherMainViewController implements Initializable
 {
 
+    @FXML
+    private ListView<?> classListView;
+    @FXML
+    private Button nextButton;
+
     /**
      * Initializes the controller class.
      */
@@ -25,5 +34,10 @@ public class TeacherMainViewController implements Initializable
     {
         // TODO
     }    
+
+    @FXML
+    private void handleNext(ActionEvent event)
+    {
+    }
     
 }
