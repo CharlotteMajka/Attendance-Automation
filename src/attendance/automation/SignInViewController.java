@@ -12,26 +12,23 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 /**
  *
  * @author zilot
  */
-public class MainViewController implements Initializable
+public class SignInViewController implements Initializable
 {
-    
+    @FXML
+    private TextField username;
+    @FXML
+    private PasswordField password;
+    @FXML
+    private Button signInButton;
     @FXML
     private Label label;
-    @FXML
-    private Button SwipeButton;
-    @FXML
-    private Button ForgotIdButton;
-    
-    private void handleButtonAction(ActionEvent event)
-    {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -40,13 +37,9 @@ public class MainViewController implements Initializable
     }    
 
     @FXML
-    private void handleSwipeIn(ActionEvent event)
+    private void handleSignIn(ActionEvent event)
     {
     }
 
-    @FXML
-    private void handleForgotId(ActionEvent event)
-    {
-    }
     
 }

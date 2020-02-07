@@ -21,7 +21,7 @@ public class AttendanceAutomation extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SignInView.fxml"));
         
         Scene scene = new Scene(root);
         
