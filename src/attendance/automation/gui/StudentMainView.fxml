@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Avatar?>
-<?import com.gluonhq.charm.glisten.control.Icon?>
-<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
@@ -26,11 +25,11 @@
       </StackPane>
       <StackPane layoutX="347.0" prefHeight="189.0" prefWidth="201.0">
          <children>
-            <Avatar radius="65.0">
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons/oneuser.png" />
                </image>
-            </Avatar>
+            </ImageView>
          </children>
       </StackPane>
       <StackPane layoutX="235.0" layoutY="293.0" prefHeight="53.0" prefWidth="426.0">
@@ -40,24 +39,6 @@
                   <Font name="Arial" size="22.0" />
                </font>
             </Label>
-         </children>
-      </StackPane>
-      <StackPane layoutX="409.0" layoutY="346.0" prefHeight="42.0" prefWidth="77.0">
-         <children>
-            <ToggleButtonGroup prefHeight="31.0" prefWidth="85.0" selectionType="SINGLE">
-               <toggles>
-                  <ToggleButton style="-fx-background-color: orange;">
-                     <graphic>
-                        <Icon content="DO_NOT_DISTURB" />
-                     </graphic>
-                  </ToggleButton>
-                  <ToggleButton selected="true" style="-fx-background-color: orange;">
-                     <graphic>
-                        <Icon content="CHECK_CIRCLE" />
-                     </graphic>
-                  </ToggleButton>
-               </toggles>
-            </ToggleButtonGroup>
          </children>
       </StackPane>
       <HBox layoutX="341.0" layoutY="443.0" prefHeight="98.0" prefWidth="215.0">
@@ -70,13 +51,43 @@
                   <Insets right="20.0" />
                </HBox.margin>
                <graphic>
-                  <Icon content="EXIT_TO_APP" />
+                  <ImageView fitHeight="65.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../exit-enter-leave-door-out-128.png" />
+                     </image>
+                  </ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="88.0" style="-fx-background-color: orange;">
                <graphic>
-                  <Icon content="CLEAR_ALL" />
+                  <ImageView fitHeight="68.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../calendar-calender-schedule-month-agenda-timetable-512.png" />
+                     </image>
+                  </ImageView>
                </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="yep">
+               <toggleGroup>
+                  <ToggleGroup fx:id="precent" />
+               </toggleGroup>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="nop" toggleGroup="$precent">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </RadioButton>
+            <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="76.0" text="Submit">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
             </Button>
          </children>
       </HBox>
