@@ -11,4 +11,6 @@ package attendance.automation.model;
  */
 public class Student {
     
+  
+    
 }

@@ -1,131 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="757.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.StudentMainViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.StudentMainViewController">
    <children>
-      <Label layoutX="254.0" layoutY="38.0" text="Welcome Gurli">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="441.0" layoutY="145.0" text="Quick Registration">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="624.0" layoutY="487.0" mnemonicParsing="false" text="Button" />
-      <GridPane hgap="10.0" layoutX="342.0" layoutY="180.0" prefHeight="273.0" prefWidth="392.0" style="-fx-border-color: black;" vgap="8.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="127.0" minWidth="10.0" prefWidth="115.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="63.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="55.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="60.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="71.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="74.0" minHeight="0.0" prefHeight="47.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="157.0" minHeight="9.0" prefHeight="97.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="157.0" minHeight="10.0" prefHeight="107.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="1056.0" style="-fx-background-color: orange;">
          <children>
-            <RadioButton fx:id="rbPresence1" mnemonicParsing="false" prefHeight="17.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="15.0" />
-               </GridPane.margin>
-            </RadioButton>
-            <RadioButton fx:id="rbAbsent1" mnemonicParsing="false" prefHeight="17.0" prefWidth="13.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets bottom="8.0" left="35.0" right="8.0" top="8.0" />
-               </GridPane.margin>
-            </RadioButton>
-            <Label prefHeight="20.0" prefWidth="71.0" text="Presence" GridPane.columnIndex="3">
+            <Label text="Welcome Gurli Hansen ">
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Bold" size="40.0" />
                </font>
             </Label>
-            <Label text="Absent" GridPane.columnIndex="4">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label prefHeight="20.0" prefWidth="71.0" text="Date">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="10.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="20.0" prefWidth="71.0" text="Class" GridPane.columnIndex="1">
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <Label prefHeight="20.0" prefWidth="71.0" text="Teacher" GridPane.columnIndex="2">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="lbDate1" prefHeight="17.0" prefWidth="112.0" text="22/12/2020 - 09:00" GridPane.rowIndex="1">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="lbClass1" text="SCO" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="lbTeacher1" text="SMSJ" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="lbDate2" prefHeight="17.0" prefWidth="112.0" text="22/12/2020 - 12:00" GridPane.rowIndex="2">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="lbClass2" text="SDE" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="lbTeacher2" text="JLE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <RadioButton fx:id="rbPresence2" mnemonicParsing="false" prefHeight="17.0" prefWidth="25.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="15.0" />
-               </GridPane.margin>
-            </RadioButton>
-            <RadioButton fx:id="rbAbsent2" mnemonicParsing="false" prefHeight="17.0" prefWidth="25.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="35.0" />
-               </GridPane.margin>
-            </RadioButton>
          </children>
-      </GridPane>
-      <VBox layoutX="67.0" layoutY="180.0" prefHeight="273.0" prefWidth="172.0" style="-fx-border-color: black;">
+      </StackPane>
+      <StackPane layoutX="434.0" prefHeight="189.0" prefWidth="201.0">
          <children>
-            <Button mnemonicParsing="false" text="Show Attendance">
-               <VBox.margin>
-                  <Insets left="15.0" top="15.0" />
-               </VBox.margin>
+            <ImageView fitHeight="132.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/oneuser.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="302.0" layoutY="293.0" prefHeight="53.0" prefWidth="426.0">
+         <children>
+            <Label text="Are you here for todays current Class?">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <StackPane layoutX="477.0" layoutY="346.0" prefHeight="42.0" prefWidth="77.0">
+         <children>
+            <ToggleButtonGroup prefHeight="31.0" prefWidth="85.0" selectionType="SINGLE">
+               <toggles>
+                  <ToggleButton style="-fx-background-color: orange;">
+                     <graphic>
+                        <Icon content="DO_NOT_DISTURB" />
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton selected="true" style="-fx-background-color: orange;">
+                     <graphic>
+                        <Icon content="CHECK_CIRCLE" />
+                     </graphic>
+                  </ToggleButton>
+               </toggles>
+            </ToggleButtonGroup>
+         </children>
+      </StackPane>
+      <HBox layoutX="415.0" layoutY="444.0" prefHeight="98.0" prefWidth="215.0">
+         <children>
+            <Button mnemonicParsing="false" pickOnBounds="false" prefHeight="74.0" prefWidth="92.0" style="-fx-background-color: orange;">
+               <opaqueInsets>
+                  <Insets right="20.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <Icon content="EXIT_TO_APP" />
+               </graphic>
             </Button>
-            <Button mnemonicParsing="false" text="Registration">
-               <VBox.margin>
-                  <Insets left="15.0" top="15.0" />
-               </VBox.margin>
+            <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="88.0" style="-fx-background-color: orange;">
+               <graphic>
+                  <Icon content="CLEAR_ALL" />
+               </graphic>
             </Button>
          </children>
-      </VBox>
+      </HBox>
    </children>
 </AnchorPane>

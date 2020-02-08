@@ -20,26 +20,6 @@ import javafx.scene.control.RadioButton;
 public class StudentMainViewController implements Initializable
 {
 
-    @FXML
-    private RadioButton rbPresence1;
-    @FXML
-    private RadioButton rbAbsent1;
-    @FXML
-    private Label lbDate1;
-    @FXML
-    private Label lbClass1;
-    @FXML
-    private Label lbTeacher1;
-    @FXML
-    private Label lbDate2;
-    @FXML
-    private Label lbClass2;
-    @FXML
-    private Label lbTeacher2;
-    @FXML
-    private RadioButton rbPresence2;
-    @FXML
-    private RadioButton rbAbsent2;
 
     /**
      * Initializes the controller class.
