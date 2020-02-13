@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.StudentMainViewController">
+   <children>
+      <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: orange;">
+         <children>
+            <Label text="Welcome Gurli Hansen ">
+               <font>
+                  <Font name="Arial Bold" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <StackPane layoutX="347.0" prefHeight="189.0" prefWidth="201.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons/oneuser.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
+      <StackPane layoutX="235.0" layoutY="293.0" prefHeight="53.0" prefWidth="426.0">
+         <children>
+            <Label text="Are you here for todays current Class?">
+               <font>
+                  <Font name="Arial" size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <HBox layoutX="341.0" layoutY="443.0" prefHeight="98.0" prefWidth="215.0">
+         <children>
+            <Button mnemonicParsing="false" pickOnBounds="false" prefHeight="74.0" prefWidth="92.0" style="-fx-background-color: orange;">
+               <opaqueInsets>
+                  <Insets right="20.0" />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="65.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../exit-enter-leave-door-out-128.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="88.0" style="-fx-background-color: orange;">
+               <graphic>
+                  <ImageView fitHeight="68.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../calendar-calender-schedule-month-agenda-timetable-512.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="yep">
+               <toggleGroup>
+                  <ToggleGroup fx:id="precent" />
+               </toggleGroup>
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </RadioButton>
+            <RadioButton mnemonicParsing="false" text="nop" toggleGroup="$precent">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+            </RadioButton>
+            <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="76.0" text="Submit">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
