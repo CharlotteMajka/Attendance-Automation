@@ -5,6 +5,7 @@
  */
 package attendance.automation.gui;
 
+import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

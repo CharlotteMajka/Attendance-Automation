@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.StudentMainViewController">
+<AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
    <children>
       <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: orange;">
          <children>
@@ -27,7 +27,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons/oneuser.png" />
+                  <Image url="@../icons/oneuser.png" />
                </image>
             </ImageView>
          </children>
@@ -43,35 +43,20 @@
       </StackPane>
       <HBox layoutX="341.0" layoutY="443.0" prefHeight="98.0" prefWidth="215.0">
          <children>
-            <Button mnemonicParsing="false" pickOnBounds="false" prefHeight="74.0" prefWidth="92.0" style="-fx-background-color: orange;">
+            <Button fx:id="btLogout" mnemonicParsing="false" onAction="#HandleLogout" pickOnBounds="false" prefHeight="74.0" prefWidth="92.0" stylesheets="@../css/ButtonLogout.css">
                <opaqueInsets>
                   <Insets right="20.0" />
                </opaqueInsets>
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
-               <graphic>
-                  <ImageView fitHeight="65.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../exit-enter-leave-door-out-128.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="76.0" prefWidth="88.0" style="-fx-background-color: orange;">
-               <graphic>
-                  <ImageView fitHeight="68.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../calendar-calender-schedule-month-agenda-timetable-512.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button fx:id="btCalenderView" mnemonicParsing="false" onAction="#handelCalenderview" prefHeight="76.0" prefWidth="88.0" stylesheets="@../css/homebutton.css" />
          </children>
       </HBox>
       <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="yep">
+            <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" text="yep">
                <toggleGroup>
                   <ToggleGroup fx:id="precent" />
                </toggleGroup>
@@ -79,12 +64,12 @@
                   <Insets right="20.0" />
                </padding>
             </RadioButton>
-            <RadioButton mnemonicParsing="false" text="nop" toggleGroup="$precent">
+            <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="nop" toggleGroup="$precent">
                <padding>
                   <Insets right="20.0" />
                </padding>
             </RadioButton>
-            <Button mnemonicParsing="false" prefHeight="24.0" prefWidth="76.0" text="Submit">
+            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="24.0" prefWidth="76.0" style="-fx-background-color: orange;" text="Submit">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
