@@ -52,6 +52,12 @@ public class SignInViewController implements Initializable
         passTeacher = "baby";
     }    
 
+    /**
+     * handels the sign in function, checks if the person signing in is a teacher
+     * or a student. If it the person does not exist, it gives an alert to the user
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handleSignIn(ActionEvent event) throws IOException
     {
@@ -60,39 +66,41 @@ public class SignInViewController implements Initializable
       
       if(user.equals(userStudent) && pass.equals(passStudent))
       {
-          //signIn student
-          FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("StudentMainView.fxml").openStream());
-            StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            stage.setTitle("Attendance - Student");
-            stage.setScene(new Scene(root));
-            stage.show();
           
+          openWindow("/attendance/automation/gui/student/StudentMainView.fxml", "Attendance - Student");
       }
       else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
-          //signIn teacher
-          FXMLLoader fxmlLoader = new FXMLLoader();
           
-          Parent root = (Parent) fxmlLoader.load(getClass().getResource("TeacherMainView.fxml").openStream());
-          TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
-          Stage stage = new Stage();
-          stage.setTitle("Attendance - Teacher");
-          stage.setScene(new Scene(root));
-          stage.show();
-          
+          openWindow("TeacherMainView.fxml", "Attendance - Teacher" );   
       }
       else
       {
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("error");
-                alert.setHeaderText("oops, something went wrong");
+                alert.setTitle("Oops");
+                alert.setHeaderText("Oops, something went wrong");
                 alert.setContentText("Wrong username or password, please try again");
                 alert.showAndWait();
       }
         
     }
     
+    /**
+     * Opens a new window
+     * @param fxml - The fxml file that should be used
+     * @param titel - The titel of the window
+     * @throws IOException 
+     */
+    public void openWindow(String fxml, String titel) throws IOException
+    {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+          
+          Parent root = (Parent) fxmlLoader.load(getClass().getResource(fxml).openStream());
+          TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
+          Stage stage = new Stage();
+          stage.setTitle(titel);
+          stage.setScene(new Scene(root));
+          stage.show();
+        
+    }
 }
