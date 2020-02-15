@@ -5,6 +5,7 @@
  */
 package attendance.automation.gui.student;
 
+import attendance.automation.gui.SignInViewController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,6 +22,7 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 /**
  * FXML Controller class
@@ -44,6 +46,8 @@ public class StudentMainViewController implements Initializable
     private Button submitprecense;
     @FXML
     private AnchorPane studentRootPane;
+    @FXML
+    private Button btPiecharView;
 
 
     /**
@@ -56,7 +60,25 @@ public class StudentMainViewController implements Initializable
     }    
 
     @FXML
-    private void HandleLogout(ActionEvent event) {
+    private void HandleLogout(ActionEvent event) throws IOException {
+            
+            Window window = studentRootPane.getScene().getWindow();
+            
+            if(window instanceof Stage){
+            ((Stage) window).close();
+            }
+            
+            FXMLLoader fxmlLoader = new FXMLLoader();
+         
+            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
+            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
+            Stage stage = new Stage();
+            
+            stage.setTitle("Sign in");
+            stage.setScene(new Scene(root));
+            stage.show();
+      
+        
     }
 
     @FXML
@@ -64,7 +86,7 @@ public class StudentMainViewController implements Initializable
             
        try
         {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/StudentCalenderView.fxml"));
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentCalenderView.fxml"));
                 
             studentRootPane.getChildren().setAll(pane);
   
@@ -77,6 +99,24 @@ public class StudentMainViewController implements Initializable
         
     }
 
+      @FXML
+    private void handelPieChart (ActionEvent event)  {
+            
+       try
+        {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentChartView.fxml"));
+                
+            studentRootPane.getChildren().setAll(pane);
+  
+        } catch (IOException ex)
+        {
+            System.out.println(ex);
+        }
+     
+     
+        
+    }
+    
     @FXML
     private void handelSubmit(ActionEvent event) {
     }

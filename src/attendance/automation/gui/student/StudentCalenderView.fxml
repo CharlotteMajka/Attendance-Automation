@@ -21,7 +21,7 @@
       </StackPane>
       <HBox layoutX="346.0" layoutY="453.0" prefHeight="84.0" prefWidth="191.0" stylesheets="@css/ButtonLogout.css">
          <children>
-            <Button mnemonicParsing="false" prefHeight="72.0" prefWidth="77.0" stylesheets="@../css/ButtonLogout.css">
+            <Button mnemonicParsing="false" onAction="#HandleLogout" prefHeight="72.0" prefWidth="77.0" stylesheets="@../css/ButtonLogout.css">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

@@ -41,7 +41,7 @@
             </Label>
          </children>
       </StackPane>
-      <HBox layoutX="341.0" layoutY="443.0" prefHeight="98.0" prefWidth="215.0">
+      <HBox layoutX="302.0" layoutY="438.0" prefHeight="98.0" prefWidth="290.0">
          <children>
             <Button fx:id="btLogout" mnemonicParsing="false" onAction="#HandleLogout" pickOnBounds="false" prefHeight="74.0" prefWidth="92.0" stylesheets="@../css/ButtonLogout.css">
                <opaqueInsets>
@@ -51,7 +51,11 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="btCalenderView" mnemonicParsing="false" onAction="#handelCalenderview" prefHeight="76.0" prefWidth="88.0" stylesheets="@../css/homebutton.css" />
+            <Button fx:id="btCalenderView" mnemonicParsing="false" onAction="#handelPieChart" prefHeight="76.0" prefWidth="88.0" stylesheets="@../css/PiechartButton.css">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="btPiecharView" mnemonicParsing="false" onAction="#handelCalenderview" prefHeight="77.0" prefWidth="104.0" stylesheets="@../css/CalendarButton.css" />
          </children>
       </HBox>
       <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
@@ -69,7 +73,7 @@
                   <Insets right="20.0" />
                </padding>
             </RadioButton>
-            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="24.0" prefWidth="76.0" style="-fx-background-color: orange;" text="Submit">
+            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="9.0" prefWidth="73.0" style="-fx-background-color: orange;" text="Submit" textAlignment="CENTER">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
