@@ -68,14 +68,27 @@ public class SignInViewController implements Initializable
       
       if(user.equals(userStudent) && pass.equals(passStudent))
       {
+          FXMLLoader fxmlLoader = new FXMLLoader();
           
-          openWindow("automation/gui/student/StudentMainView.fxml", "Attendance - Student"); 
+          Parent root;
+          root = (Parent) fxmlLoader.load(getClass().getResource("attendance/automation/gui/student/StudentMainView.fxml").openStream());
+          StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
+          Stage stage = new Stage();
+          stage.setTitle("Attendance - Student");
+          stage.setScene(new Scene(root));
+          stage.show();
           signInView.hide();
       }
       else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
+          FXMLLoader fxmlLoader = new FXMLLoader();
           
-          openWindow("TeacherMainView.fxml", "Attendance - Teacher" );
+          Parent root = (Parent) fxmlLoader.load(getClass().getResource("TeacherMainView.fxml").openStream());
+          TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
+          Stage stage = new Stage();
+          stage.setTitle("Attendance - Teacher");
+          stage.setScene(new Scene(root));
+          stage.show();
           signInView.hide();
       }
       else
