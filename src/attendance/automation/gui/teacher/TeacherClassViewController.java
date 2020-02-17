@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package attendance.automation.gui;
+package attendance.automation.gui.teacher;
 
+import attendance.automation.gui.model.teacherModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +38,7 @@ public class TeacherClassViewController implements Initializable
     private Label classNameLabel;
     @FXML
     private Button backButton;
+    private teacherModel tm;
 
     /**
      * Initializes the controller class.
@@ -43,13 +46,13 @@ public class TeacherClassViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        tm = new teacherModel();
     }    
 
     @FXML
     private void handleBack(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/TeacherMainView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/teacher/TeacherMainView.fxml"));
         Parent root = loader.load();
         TeacherMainViewController TMVController = loader.getController();
             
@@ -61,4 +64,8 @@ public class TeacherClassViewController implements Initializable
         oldStage.close();
     }
     
+    private void populateList()
+    {
+        
+    }
 }

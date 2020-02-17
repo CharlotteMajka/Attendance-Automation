@@ -18,6 +18,8 @@ public class Student {
     
     private StringProperty name;
     private IntegerProperty id;
+    private IntegerProperty absenceProcent;
+    private StringProperty dayMostAbsent;
     
     public Student(String name, int id)
     {
@@ -26,6 +28,33 @@ public class Student {
         
     }
 
+    public Student(String name, int absenceProcent, String dayMostAbsent)
+    {
+        this.name = new SimpleStringProperty();
+        this.absenceProcent = new SimpleIntegerProperty();
+        this.dayMostAbsent = new SimpleStringProperty();
+    }
+
+    public IntegerProperty getAbsenceProcent()
+    {
+        return absenceProcent;
+    }
+
+    public void setAbsenceProcent(IntegerProperty absenceProcent)
+    {
+        this.absenceProcent = absenceProcent;
+    }
+
+    public StringProperty getDayMostAbsent()
+    {
+        return dayMostAbsent;
+    }
+
+    public void setDayMostAbsent(StringProperty dayMostAbsent)
+    {
+        this.dayMostAbsent = dayMostAbsent;
+    }
+    
     public StringProperty getName() {
         return name;
     }
