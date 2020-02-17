@@ -14,22 +14,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.chart.LineChart;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
- * @author zilot
+ * @author Christina
  */
-public class TeacherMainViewController implements Initializable
+public class TeacherClassViewController implements Initializable
 {
 
     @FXML
-    private ListView<?> classListView;
+    private TableView<?> classTableView;
     @FXML
-    private Button nextButton;
+    private LineChart<?, ?> classLineChart;
+    @FXML
+    private Label classNameLabel;
 
     /**
      * Initializes the controller class.
@@ -41,9 +44,9 @@ public class TeacherMainViewController implements Initializable
     }    
 
     @FXML
-    private void handleNext(ActionEvent event) throws IOException
+    private void handleBack(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance.automation.gui.TeacherClassView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance.automation.gui.TeacherMainViewController"));
         Parent root = loader.load();
             
         Stage stage = new Stage();
