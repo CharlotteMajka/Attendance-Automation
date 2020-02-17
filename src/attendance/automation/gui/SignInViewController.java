@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -63,16 +64,32 @@ public class SignInViewController implements Initializable
     {
       String user = username.getText();
       String pass = password.getText();
+      Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
       if(user.equals(userStudent) && pass.equals(passStudent))
       {
+          FXMLLoader fxmlLoader = new FXMLLoader();
           
-          openWindow("/attendance/automation/gui/student/StudentMainView.fxml", "Attendance - Student");
+          Parent root;
+          root = (Parent) fxmlLoader.load(getClass().getResource("attendance/automation/gui/student/StudentMainView.fxml").openStream());
+          StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
+          Stage stage = new Stage();
+          stage.setTitle("Attendance - Student");
+          stage.setScene(new Scene(root));
+          stage.show();
+          signInView.hide();
       }
       else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
+          FXMLLoader fxmlLoader = new FXMLLoader();
           
-          openWindow("TeacherMainView.fxml", "Attendance - Teacher" );   
+          Parent root = (Parent) fxmlLoader.load(getClass().getResource("TeacherMainView.fxml").openStream());
+          TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
+          Stage stage = new Stage();
+          stage.setTitle("Attendance - Teacher");
+          stage.setScene(new Scene(root));
+          stage.show();
+          signInView.hide();
       }
       else
       {
@@ -101,6 +118,8 @@ public class SignInViewController implements Initializable
           stage.setTitle(titel);
           stage.setScene(new Scene(root));
           stage.show();
+          
+          
         
     }
 }
