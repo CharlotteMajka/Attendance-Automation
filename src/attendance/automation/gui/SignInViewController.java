@@ -102,24 +102,4 @@ public class SignInViewController implements Initializable
         
     }
     
-    /**
-     * Opens a new window
-     * @param fxml - The fxml file that should be used
-     * @param titel - The titel of the window
-     * @throws IOException 
-     */
-    public void openWindow(String fxml, String titel) throws IOException
-    {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-          
-          Parent root = (Parent) fxmlLoader.load(getClass().getResource(fxml).openStream());
-          TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
-          Stage stage = new Stage();
-          stage.setTitle(titel);
-          stage.setScene(new Scene(root));
-          stage.show();
-          
-          
-        
-    }
 }
