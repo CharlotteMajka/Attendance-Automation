@@ -71,7 +71,7 @@ public class SignInViewController implements Initializable
           FXMLLoader fxmlLoader = new FXMLLoader();
           
           Parent root;
-          root = (Parent) fxmlLoader.load(getClass().getResource("attendance/automation/gui/student/StudentMainView.fxml").openStream());
+          root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml").openStream());
           StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
           Stage stage = new Stage();
           stage.setTitle("Attendance - Student");
