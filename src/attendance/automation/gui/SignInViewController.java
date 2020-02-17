@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -63,16 +64,19 @@ public class SignInViewController implements Initializable
     {
       String user = username.getText();
       String pass = password.getText();
+      Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
       if(user.equals(userStudent) && pass.equals(passStudent))
       {
           
-          openWindow("/attendance/automation/gui/student/StudentMainView.fxml", "Attendance - Student");
+          openWindow("automation/gui/student/StudentMainView.fxml", "Attendance - Student"); 
+          signInView.hide();
       }
       else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
           
-          openWindow("TeacherMainView.fxml", "Attendance - Teacher" );   
+          openWindow("TeacherMainView.fxml", "Attendance - Teacher" );
+          signInView.hide();
       }
       else
       {
@@ -101,6 +105,8 @@ public class SignInViewController implements Initializable
           stage.setTitle(titel);
           stage.setScene(new Scene(root));
           stage.show();
+          
+          
         
     }
 }
