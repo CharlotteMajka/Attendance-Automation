@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
@@ -33,6 +34,8 @@ public class TeacherClassViewController implements Initializable
     private LineChart<?, ?> classLineChart;
     @FXML
     private Label classNameLabel;
+    @FXML
+    private Button backButton;
 
     /**
      * Initializes the controller class.
@@ -53,6 +56,9 @@ public class TeacherClassViewController implements Initializable
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
+        
+        Stage oldStage = (Stage) backButton.getScene().getWindow();
+        oldStage.close();
     }
     
 }
