@@ -5,6 +5,7 @@
  */
 package attendance.automation.gui;
 
+import attendance.automation.gui.teacher.TeacherMainViewController;
 import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
 import java.net.URL;
@@ -83,7 +84,7 @@ public class SignInViewController implements Initializable
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           
-          Parent root = (Parent) fxmlLoader.load(getClass().getResource("TeacherMainView.fxml").openStream());
+          Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/teacher/TeacherMainView.fxml").openStream());
           TeacherMainViewController cont = (TeacherMainViewController) fxmlLoader.getController();
           Stage stage = new Stage();
           stage.setTitle("Attendance - Teacher");
