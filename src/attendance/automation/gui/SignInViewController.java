@@ -47,10 +47,10 @@ public class SignInViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        userStudent = "Mads";
+        userStudent = "mads";
         passStudent = "jensen";
         
-        userTeacher = "Jeppe";
+        userTeacher = "jeppe";
         passTeacher = "baby";
     }    
 

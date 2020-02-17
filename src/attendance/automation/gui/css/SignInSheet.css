@@ -12,12 +12,12 @@ and open the template in the editor.
 
 Label
 {
-    -fx-text-fill: orange;
+    -fx-text-fill: black;
     
 }
 
 AnchorPane
 {
-    -fx-background-color: #383838;
+    -fx-background-color: orange;
    
 }
