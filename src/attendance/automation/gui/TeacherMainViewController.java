@@ -43,9 +43,10 @@ public class TeacherMainViewController implements Initializable
     @FXML
     private void handleNext(ActionEvent event) throws IOException
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance.automation.gui.TeacherClassView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/TeacherClassView.fxml"));
         Parent root = loader.load();
-            
+        TeacherClassViewController TCVController = loader.getController();
+        
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.show();
