@@ -4,10 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="534.0" prefWidth="445.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.teacher.TeacherMainViewController">
    <children>
+      <StackPane layoutY="52.0" prefHeight="73.0" prefWidth="446.0" style="-fx-background-color: #FBBB2C;" />
       <Label fx:id="welcomeMessage" layoutX="56.0" layoutY="67.0" prefHeight="54.0" prefWidth="331.0" text="WELCOME TEACHER">
          <font>
             <Font size="36.0" />
@@ -19,7 +21,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="nextButton" layoutX="283.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleNext" text="Next">
+      <Button fx:id="nextButton" layoutX="283.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleNext" style="-fx-background-color: #FBBB2C;" text="Next">
          <font>
             <Font size="13.0" />
          </font>

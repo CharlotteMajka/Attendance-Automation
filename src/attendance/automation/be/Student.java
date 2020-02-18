@@ -20,11 +20,15 @@ public class Student {
     private IntegerProperty id;
     private IntegerProperty absenceProcent;
     private StringProperty dayMostAbsent;
+    public StringProperty username;
+    public StringProperty password;
     
-    public Student(String name, int id)
+    public Student(String name, int id, String username, String password)
     {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
+        this.username = new SimpleStringProperty();
+        this.password = new SimpleStringProperty();
         
     }
 
@@ -35,6 +39,21 @@ public class Student {
         this.dayMostAbsent = new SimpleStringProperty(dayMostAbsent);
     }
 
+    public StringProperty getUsername(){
+        return username;
+    }
+    
+    public void setUsername(StringProperty username){
+        this.username = username;
+    }
+    public StringProperty getPassword(){
+        return password;
+    }
+    
+    public void setpassword(StringProperty password){
+        this.password = password;
+    }
+    
     public Integer getAbsenceProcent()
     {
         return this.absenceProcent.get();
@@ -55,7 +74,8 @@ public class Student {
         this.dayMostAbsent = new SimpleStringProperty(dayMostAbsent);
     }
     
-    public String getName() {
+    public String getName() 
+    {
         return this.name.get();
     }
 
@@ -70,5 +90,9 @@ public class Student {
     public void setId(IntegerProperty id) {
         this.id = id;
     }
+
+ 
+    
+    
     
 }
