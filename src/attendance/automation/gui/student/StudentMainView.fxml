@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
    <children>
-      <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: orange;">
+      <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: #FBBB2C;">
          <children>
             <Label text="Welcome Mads Jensen">
                <font>
@@ -68,7 +68,7 @@
                   <Insets right="20.0" />
                </padding>
             </RadioButton>
-            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="9.0" prefWidth="73.0" style="-fx-background-color: orange;" text="Submit" textAlignment="CENTER">
+            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="9.0" prefWidth="73.0" style="-fx-background-color: #FBBB2C;" text="Submit" textAlignment="CENTER">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
