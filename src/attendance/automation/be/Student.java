@@ -23,48 +23,48 @@ public class Student {
     
     public Student(String name, int id)
     {
-        this.id = new SimpleIntegerProperty();
-        this.name = new SimpleStringProperty();
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
         
     }
 
     public Student(String name, int absenceProcent, String dayMostAbsent)
     {
-        this.name = new SimpleStringProperty();
-        this.absenceProcent = new SimpleIntegerProperty();
-        this.dayMostAbsent = new SimpleStringProperty();
+        this.name = new SimpleStringProperty(name);
+        this.absenceProcent = new SimpleIntegerProperty(absenceProcent);
+        this.dayMostAbsent = new SimpleStringProperty(dayMostAbsent);
     }
 
-    public IntegerProperty getAbsenceProcent()
+    public Integer getAbsenceProcent()
     {
-        return absenceProcent;
+        return this.absenceProcent.get();
     }
 
-    public void setAbsenceProcent(IntegerProperty absenceProcent)
+    public void setAbsenceProcent(Integer absenceProcent)
     {
-        this.absenceProcent = absenceProcent;
+        this.absenceProcent = new SimpleIntegerProperty(absenceProcent);
     }
 
-    public StringProperty getDayMostAbsent()
+    public String getDayMostAbsent()
     {
-        return dayMostAbsent;
+        return this.dayMostAbsent.get();
     }
 
-    public void setDayMostAbsent(StringProperty dayMostAbsent)
+    public void setDayMostAbsent(String dayMostAbsent)
     {
-        this.dayMostAbsent = dayMostAbsent;
+        this.dayMostAbsent = new SimpleStringProperty(dayMostAbsent);
     }
     
-    public StringProperty getName() {
-        return name;
+    public String getName() {
+        return this.name.get();
     }
 
-    public void setName(StringProperty name) {
-        this.name = name;
+    public void setName(String name) {
+        this.name = new SimpleStringProperty(name);
     }
 
-    public IntegerProperty getId() {
-        return id;
+    public Integer getId() {
+        return this.id.get();
     }
 
     public void setId(IntegerProperty id) {

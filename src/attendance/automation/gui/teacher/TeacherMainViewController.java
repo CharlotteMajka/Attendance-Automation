@@ -80,5 +80,4 @@ public class TeacherMainViewController implements Initializable
     {
         classListView.setItems(tm.classList());
     }
-    
 }

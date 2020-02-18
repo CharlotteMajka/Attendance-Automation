@@ -23,22 +23,17 @@ public class teacherModel
         return teacherClassList;
     }
     
-    public ObservableList studentList()
+    public ObservableList<Student> studentList()
     {
-        ObservableList<Student> studentList = FXCollections.observableArrayList();
-        Student a = new Student("Mads Jensen", 16, "Tuesday");
-        Student b = new Student("Sascha Mikkelsen", 28, "Thursday");
-        Student c = new Student("Karl Jensen", 25, "Monday");
-        Student d = new Student("Pernille Carlsen", 78, "Friday");
-        Student e = new Student("Anders Davidsen", 12, "Monday");
-        Student f = new Student("Rebecca Friis", 54, "Wednesday");
-        
-        studentList.add(a);
-        studentList.add(b);
-        studentList.add(c);
-        studentList.add(d);
-        studentList.add(e);
-        studentList.add(f);
+        ObservableList<Student> studentList = FXCollections.observableArrayList(
+        new Student("Mads Jensen", 16, "Tuesday"),
+        new Student("Sascha Mikkelsen", 28, "Thursday"),
+        new Student("Karl Jensen", 25, "Monday"),
+        new Student("Pernille Carlsen", 78, "Friday"),
+        new Student("Anders Davidsen", 12, "Monday"),
+        new Student("Rebecca Friis", 54, "Wednesday"),
+        new Student("Margret Grief", 98, "Tuesday")
+        );
         
         return studentList;
     }
