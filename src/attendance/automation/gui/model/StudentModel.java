@@ -5,6 +5,9 @@
  */
 package attendance.automation.gui.model;
 
+import attendance.automation.BLL.BLLManager;
+import attendance.automation.be.Student;
+import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
@@ -22,7 +25,19 @@ public class StudentModel {
         private final  String wednesday = "Wednesday";
         private final  String thursday = "Thursday";
         private final  String friday = "Friday";
+        private List<Student> listofStudents;
+        private BLLManager bll;
+        
+       public StudentModel(){
+       bll = new BLLManager();
+       
+       listofStudents = bll.getStudentList();
+  
+       
+       } 
+        
     
+       
     public ObservableList<PieChart.Data> setPiechartData(){
         
        ObservableList<PieChart.Data> pieChartData =   FXCollections.observableArrayList(
@@ -34,6 +49,8 @@ public class StudentModel {
         return pieChartData;
         
     }
+    
+ 
     
     public XYChart.Series setPresence(){
 

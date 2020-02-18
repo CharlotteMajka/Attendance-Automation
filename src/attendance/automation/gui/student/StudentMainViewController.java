@@ -7,6 +7,7 @@ package attendance.automation.gui.student;
 
 import attendance.automation.be.Student;
 import attendance.automation.gui.SignInViewController;
+import attendance.automation.gui.model.StudentModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -52,7 +53,9 @@ public class StudentMainViewController implements Initializable
     private Button btPiecharView;
     @FXML
     private Label lbWelcome ;
-
+    
+    private Student user;
+    private StudentModel sm;
    
     /**
      * Initializes the controller class.
@@ -60,15 +63,18 @@ public class StudentMainViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        
         Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
         setName(mads);
     }    
     
+    public void getStudentFromLogin(Student stud){
+        
+    }
+    
     public void setName(Student stud){
-       StringProperty name = stud.getName();
-       
-       
-        lbWelcome.textProperty().bind(name);
+              
+        lbWelcome.setText("Welcome " + stud.getName());
               
     }
     
@@ -135,6 +141,9 @@ public class StudentMainViewController implements Initializable
     @FXML
     private void handelSubmit(ActionEvent event) {
     }
-    
+   
+    public void transferStudent(Student stud){
+        //tænker den er relvant for at få infor mede over i studentviewet 
+    }
 
 }

@@ -71,8 +71,8 @@ public class Student {
         this.dayMostAbsent = dayMostAbsent;
     }
     
-    public StringProperty getName() {
-        return name;
+    public String getName() {
+        return name.get();
     }
 
     public void setName(StringProperty name) {
@@ -87,10 +87,7 @@ public class Student {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Student{" + "name=" + name + '}';
-    }
+ 
     
     
     

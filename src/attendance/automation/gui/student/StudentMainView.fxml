@@ -17,23 +17,11 @@
       <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: #FBBB2C;">
 
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Welcome ">
-                     <font>
-                        <Font name="Arial Bold" size="40.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lbWelcome" text="Mads Jensen">
-                     <font>
-                        <Font name="Arial Bold" size="40.0" />
-                     </font>
-                  </Label>
-               </children>
-               <padding>
-                  <Insets left="225.0" top="25.0" />
-               </padding>
-            </HBox>
+            <Label fx:id="lbWelcome" text="Mads Jensen">
+               <font>
+                  <Font name="Arial Bold" size="40.0" />
+               </font>
+            </Label>
          </children>
       </StackPane>
       <StackPane layoutX="347.0" prefHeight="189.0" prefWidth="201.0">

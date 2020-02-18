@@ -5,10 +5,12 @@
  */
 package attendance.automation.gui;
 
+import attendance.automation.be.Student;
 import attendance.automation.gui.teacher.TeacherMainViewController;
 import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,13 +45,16 @@ public class SignInViewController implements Initializable
     private String passStudent;
     private String userTeacher;
     private String passTeacher;
+    private List<Student> StudentList;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
+        
+        
         userStudent = "mads";
         passStudent = "jensen";
-        
+//        
         userTeacher = "jeppe";
         passTeacher = "baby";
     }    
@@ -70,6 +75,7 @@ public class SignInViewController implements Initializable
       if(user.equals(userStudent) && pass.equals(passStudent))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
+         
           
           Parent root;
           root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml").openStream());
@@ -102,5 +108,7 @@ public class SignInViewController implements Initializable
       }
         
     }
+    
+  
     
 }

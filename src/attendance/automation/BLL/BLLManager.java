@@ -7,6 +7,8 @@ package attendance.automation.BLL;
 
 import attendance.automation.be.Student;
 import attendance.automation.dal.MockData;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -15,11 +17,23 @@ import attendance.automation.dal.MockData;
 public class BLLManager {
     
     private Student st;
+    private final MockData md;
    
-   public Student getStudent(){
-       return st;
+    public BLLManager(){
+     md = new MockData();
+   
    }
     
+   public List<Student> getStudentList(){
+       
+       List<Student> studlist = new ArrayList();
+       studlist.addAll(md.studentList());
+       return studlist;
+   
+   } 
     
+
+    
+ 
     
 }
