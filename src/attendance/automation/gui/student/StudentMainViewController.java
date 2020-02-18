@@ -5,10 +5,12 @@
  */
 package attendance.automation.gui.student;
 
+import attendance.automation.be.Student;
 import attendance.automation.gui.SignInViewController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,17 +50,30 @@ public class StudentMainViewController implements Initializable
     private AnchorPane studentRootPane;
     @FXML
     private Button btPiecharView;
+    @FXML
+    private Label lbWelcome ;
 
-
+   
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        // TODO
+        Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
+        setName(mads);
     }    
-
+    
+    public void setName(Student stud){
+       StringProperty name = stud.getName();
+       
+       
+        lbWelcome.textProperty().bind(name);
+              
+    }
+    
+   
+    
     @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
             
@@ -121,4 +136,5 @@ public class StudentMainViewController implements Initializable
     private void handelSubmit(ActionEvent event) {
     }
     
+
 }
