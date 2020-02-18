@@ -69,6 +69,8 @@ public class TeacherClassViewController implements Initializable
         
         classNameLabel.setText("CSe2019A");
         classNameLabel.setAlignment(Pos.CENTER);
+        absenceProcent.setSortType(TableColumn.SortType.DESCENDING);
+        classTableView.getSortOrder().addAll(absenceProcent);
     }    
 
     @FXML
@@ -118,5 +120,6 @@ public class TeacherClassViewController implements Initializable
         pieChart.setLegendVisible(true);
         pieChart.setStartAngle(180);
         pieChart.setMinSize(100, 100);
+        
     }
 }
