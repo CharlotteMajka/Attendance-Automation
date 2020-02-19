@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
+<AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
    <children>
 
       <StackPane layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: #FBBB2C;">
@@ -57,7 +57,7 @@
       </HBox>
       <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
          <children>
-            <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" text="yep">
+            <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" text="Yes">
                <toggleGroup>
                   <ToggleGroup fx:id="precent" />
                </toggleGroup>
@@ -65,7 +65,7 @@
                   <Insets right="20.0" />
                </padding>
             </RadioButton>
-            <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="nop" toggleGroup="$precent">
+            <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="No" toggleGroup="$precent">
                <padding>
                   <Insets right="20.0" />
                </padding>

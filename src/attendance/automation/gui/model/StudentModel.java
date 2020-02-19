@@ -27,12 +27,15 @@ public class StudentModel {
         private final  String friday = "Friday";
         private List<Student> listofStudents;
         private BLLManager bll;
+        private String username;
+        private String password;
         
        public StudentModel(){
         bll = new BLLManager();
        
+
         listofStudents = bll.getStudentList();
-  
+
        
        } 
         
@@ -95,4 +98,26 @@ public class StudentModel {
         
         return absent;
     }
+
+    public String getUsername()
+    {
+        return username;
+    }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+     
+    
 }

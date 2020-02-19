@@ -7,6 +7,9 @@ package attendance.automation.gui;
 
 import attendance.automation.be.Student;
 import attendance.automation.gui.model.StudentModel;
+
+import attendance.automation.gui.model.teacherModel;
+
 import attendance.automation.gui.teacher.TeacherMainViewController;
 import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
@@ -46,14 +49,19 @@ public class SignInViewController implements Initializable
     private String passStudent;
     private String userTeacher;
     private String passTeacher;
-    public StudentModel sm;
-    
-  
+
+    private List<Student> StudentList;
+    private StudentModel studentModel;
+    private teacherModel teacherModel;
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
-    {
-        sm = new StudentModel();
+
+
+        studentModel = new StudentModel();
+        teacherModel = new teacherModel();
+
         
         userStudent = "mads";
         passStudent = "jensen";
@@ -77,7 +85,9 @@ public class SignInViewController implements Initializable
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
-      if(user.equals(username.getText()) && pass.equals(password.getText()))
+
+      if(user.equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
+
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
          
@@ -92,7 +102,7 @@ public class SignInViewController implements Initializable
           stage.show();
           signInView.hide();
       }
-      else if(user.equals(userTeacher) && pass.equals(passTeacher))
+      else if(user.equals(teacherModel.getUsername()) && pass.equals(teacherModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           
