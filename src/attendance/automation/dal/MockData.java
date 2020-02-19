@@ -27,13 +27,13 @@ public class MockData {
         
         Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
         Student gurli = new Student("Gurli Hansen", 6, "gurli", "hansen");
-        Student hans = new Student("Hans Jørgensen", 6, "gurli", "hansen");
-        Student hilda = new Student("Hilda Kristensen", 6, "gurli", "hansen");
-        Student huggo = new Student("Huggo Collins ", 6, "gurli", "hansen");
-        Student pia = new Student("Pia Møller", 6, "gurli", "hansen");
-        Student lone = new Student("Lone Thomsen", 6, "gurli", "hansen");
-        Student rikke = new Student("Rikke Blicher", 6, "gurli", "hansen");
-        Student simba = new Student("Simba Åsted", 6, "gurli", "hansen");
+        Student hans = new Student("Hans Jørgensen", 7, "hans", "jørgensen");
+        Student hilda = new Student("Hilda Kristensen", 8, "hilda", "kristensen");
+        Student huggo = new Student("Huggo Collins ", 9, "huggo", "collons");
+        Student pia = new Student("Pia Møller", 10, "pia", "møller");
+        Student lone = new Student("Lone Thomsen", 11, "lone", "thomsen");
+        Student rikke = new Student("Rikke Blicher", 12, "rikke", "blicher");
+        Student simba = new Student("Simba Åsted", 13, "simba", "åsted");
         
         ArrayList<Student> studentList = new ArrayList();
         
