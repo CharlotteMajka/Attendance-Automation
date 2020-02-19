@@ -6,6 +6,7 @@
 package attendance.automation.gui;
 
 import attendance.automation.be.Student;
+import attendance.automation.gui.model.StudentModel;
 import attendance.automation.gui.teacher.TeacherMainViewController;
 import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
@@ -45,12 +46,14 @@ public class SignInViewController implements Initializable
     private String passStudent;
     private String userTeacher;
     private String passTeacher;
-    private List<Student> StudentList;
+    public StudentModel sm;
+    
+  
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        
+        sm = new StudentModel();
         
         userStudent = "mads";
         passStudent = "jensen";
@@ -68,11 +71,13 @@ public class SignInViewController implements Initializable
     @FXML
     private void handleSignIn(ActionEvent event) throws IOException
     {
+    //Student stud = sm.getoneStudent(username.getText(), password.getText());
+        
       String user = username.getText();
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
-      if(user.equals(userStudent) && pass.equals(passStudent))
+      if(user.equals(username.getText()) && pass.equals(password.getText()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
          
@@ -80,6 +85,7 @@ public class SignInViewController implements Initializable
           Parent root;
           root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml").openStream());
           StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
+          //StudentMainViewController.transferStudent(stud);
           Stage stage = new Stage();
           stage.setTitle("Attendance - Student");
           stage.setScene(new Scene(root));

@@ -39,15 +39,15 @@ public class Student {
         this.dayMostAbsent = new SimpleStringProperty(dayMostAbsent);
     }
 
-    public StringProperty getUsername(){
-        return username;
+    public String getUsername(){
+        return this.username.get();
     }
     
     public void setUsername(StringProperty username){
         this.username = username;
     }
-    public StringProperty getPassword(){
-        return password;
+    public String getPassword(){
+        return this.password.get();
     }
     
     public void setpassword(StringProperty password){

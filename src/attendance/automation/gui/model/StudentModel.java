@@ -29,13 +29,27 @@ public class StudentModel {
         private BLLManager bll;
         
        public StudentModel(){
-       bll = new BLLManager();
+        bll = new BLLManager();
        
-       listofStudents = bll.getStudentList();
+        listofStudents = bll.getStudentList();
   
        
        } 
         
+    public Student getoneStudent(String username, String password){
+        
+        for (Student student : listofStudents)
+        {
+             if(student.getUsername().equals(username) && student.getPassword().equals(password) ){
+             
+                 return student;
+                 
+             }
+        }
+        
+        return null;     
+ 
+    }
     
        
     public ObservableList<PieChart.Data> setPiechartData(){

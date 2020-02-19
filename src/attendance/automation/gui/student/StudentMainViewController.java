@@ -64,7 +64,7 @@ public class StudentMainViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         
-        Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
+       Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
         setName(mads);
     }    
     
@@ -143,7 +143,7 @@ public class StudentMainViewController implements Initializable
     }
    
     public void transferStudent(Student stud){
-        //tænker den er relvant for at få infor mede over i studentviewet 
+      this.user = stud;  //tænker den er relvant for at få infor mede over i studentviewet 
     }
 
 }
