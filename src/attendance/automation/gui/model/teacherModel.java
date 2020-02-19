@@ -15,6 +15,15 @@ import javafx.collections.ObservableList;
  */
 public class teacherModel
 {
+    private String username;
+    private String password;
+    
+    public teacherModel()
+    {
+        username = "jeppe";
+        password = "baby";
+    }
+    
     public ObservableList classList()
     {
         ObservableList<String> teacherClassList = FXCollections.observableArrayList();
@@ -37,4 +46,25 @@ public class teacherModel
         
         return studentList;
     }
+
+    public String getUsername()
+    {
+        return username;
+    }
+
+    public void setUsername(String username)
+    {
+        this.username = username;
+    }
+
+    public String getPassword()
+    {
+        return password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+    
 }

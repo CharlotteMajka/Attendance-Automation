@@ -6,6 +6,8 @@
 package attendance.automation.gui;
 
 import attendance.automation.be.Student;
+import attendance.automation.gui.model.StudentModel;
+import attendance.automation.gui.model.teacherModel;
 import attendance.automation.gui.teacher.TeacherMainViewController;
 import attendance.automation.gui.student.StudentMainViewController;
 import java.io.IOException;
@@ -46,11 +48,14 @@ public class SignInViewController implements Initializable
     private String userTeacher;
     private String passTeacher;
     private List<Student> StudentList;
+    private StudentModel studentModel;
+    private teacherModel teacherModel;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        
+        studentModel = new StudentModel();
+        teacherModel = new teacherModel();
         
         userStudent = "mads";
         passStudent = "jensen";
@@ -72,7 +77,7 @@ public class SignInViewController implements Initializable
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
-      if(user.equals(userStudent) && pass.equals(passStudent))
+      if(user.equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
          
@@ -86,7 +91,7 @@ public class SignInViewController implements Initializable
           stage.show();
           signInView.hide();
       }
-      else if(user.equals(userTeacher) && pass.equals(passTeacher))
+      else if(user.equals(teacherModel.getUsername()) && pass.equals(teacherModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           
