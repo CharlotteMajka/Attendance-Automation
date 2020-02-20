@@ -29,7 +29,7 @@ public class MockData {
         Student gurli = new Student("Gurli Hansen", 6, "gurli", "hansen");
         Student hans = new Student("Hans Jørgensen", 7, "hans", "jørgensen");
         Student hilda = new Student("Hilda Kristensen", 8, "hilda", "kristensen");
-        Student huggo = new Student("Huggo Collins ", 9, "huggo", "collons");
+        Student huggo = new Student("Huggo Collins ", 9, "huggo", "collins");
         Student pia = new Student("Pia Møller", 10, "pia", "møller");
         Student lone = new Student("Lone Thomsen", 11, "lone", "thomsen");
         Student rikke = new Student("Rikke Blicher", 12, "rikke", "blicher");
