@@ -61,7 +61,9 @@ public class TeacherMainViewController implements Initializable
         
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+            stage.setTitle("Attendance - Teacher");
             stage.show();
+            
         
             Stage oldStage = (Stage) nextButton.getScene().getWindow();
             oldStage.close();
