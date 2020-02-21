@@ -25,20 +25,38 @@ public class StudentModel {
         private final  String wednesday = "Wednesday";
         private final  String thursday = "Thursday";
         private final  String friday = "Friday";
-        private List<Student> listofStudents;
-        private BLLManager bll;
+       // private final List<Student> listofStudents;
+        private final BLLManager bll;
         private String username;
         private String password;
         
        public StudentModel(){
-       bll = new BLLManager();
+        bll = new BLLManager();
        
-       listofStudents = bll.getStudentList();
-       username = "mads";
-       password = "jensen";
+
+        
+
        
        } 
         
+    public Student getoneStudent(String username, String password){
+       List<Student> listwithstudents = bll.getStudentList();
+        
+        Student stud = null;
+        for (Student student : listwithstudents)
+        {
+                
+             if(student.getUsername().equals(username) && student.getPassword().equals(password) ){
+                 
+                stud = student;
+                 break;
+                 
+             }
+        }
+        
+        return stud;     
+ 
+    }
     
        
     public ObservableList<PieChart.Data> setPiechartData(){

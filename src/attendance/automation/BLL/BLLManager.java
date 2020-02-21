@@ -27,9 +27,8 @@ public class BLLManager {
     
    public List<Student> getStudentList(){
        
-       List<Student> studlist = new ArrayList();
-       studlist.addAll(md.studentList());
-       return studlist;
+     
+       return   md.getstudentList();
    
    } 
    
