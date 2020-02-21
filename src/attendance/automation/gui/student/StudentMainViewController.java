@@ -64,8 +64,10 @@ public class StudentMainViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         
-        Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
-        setName(mads);
+
+       //Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
+
+        setName(user);
     }    
     
     public void getStudentFromLogin(Student stud){
@@ -140,10 +142,13 @@ public class StudentMainViewController implements Initializable
     
     @FXML
     private void handelSubmit(ActionEvent event) {
+        
+        
+        
     }
    
     public void transferStudent(Student stud){
-        //tænker den er relvant for at få infor mede over i studentviewet 
+      this.user = stud;  //tænker den er relvant for at få infor mede over i studentviewet 
     }
 
 }

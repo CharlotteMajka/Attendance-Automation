@@ -92,7 +92,7 @@
             </Label>
             <HBox prefHeight="36.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" text="yes">
+                  <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" selected="true" text="yep">
                      <toggleGroup>
                         <ToggleGroup fx:id="precent" />
                      </toggleGroup>
@@ -128,7 +128,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </RadioButton>
-                  <RadioButton fx:id="rbNotHeretoday1" mnemonicParsing="false" text="no" toggleGroup="$precent1">
+                  <RadioButton fx:id="rbNotHeretoday1" mnemonicParsing="false" selected="true" text="nop" toggleGroup="$precent1">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -148,7 +148,7 @@
             </HBox>
             <HBox prefHeight="36.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <RadioButton fx:id="rbHeretoday2" mnemonicParsing="false" text="yes">
+                  <RadioButton fx:id="rbHeretoday2" mnemonicParsing="false" selected="true" text="yep">
                      <toggleGroup>
                         <ToggleGroup fx:id="precent2" />
                      </toggleGroup>

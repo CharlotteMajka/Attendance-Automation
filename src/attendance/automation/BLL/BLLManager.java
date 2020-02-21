@@ -9,6 +9,7 @@ import attendance.automation.be.Student;
 import attendance.automation.dal.MockData;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -26,11 +27,15 @@ public class BLLManager {
     
    public List<Student> getStudentList(){
        
-       List<Student> studlist = new ArrayList();
-       studlist.addAll(md.studentList());
-       return studlist;
+     
+       return   md.getstudentList();
    
    } 
+   
+   public ObservableList<Student> getTeacherStudentList()
+   {
+       return md.teacherStudentList();
+   }
     
    public void getUsernameStudent()
    {
@@ -52,4 +57,8 @@ public class BLLManager {
     
  
     
+   public ObservableList getTeacherClassList()
+   {
+       return md.teacherClassList();
+   }
 }
