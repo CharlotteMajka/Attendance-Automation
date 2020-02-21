@@ -6,6 +6,7 @@
 package attendance.automation.gui.teacher;
 
 import attendance.automation.gui.SignInViewController;
+import attendance.automation.gui.model.LogOutModel;
 import attendance.automation.gui.model.teacherModel;
 import java.io.IOException;
 import java.net.URL;
@@ -35,11 +36,14 @@ public class TeacherMainViewController implements Initializable
     private ListView<?> classListView;
     @FXML
     private Button nextButton;
-    private teacherModel tm;
+    
     @FXML
     private Label welcomeMessage;
     @FXML
     private Button logOutButton;
+    
+    private LogOutModel lom;
+    private teacherModel tm;
 
     /**
      * Initializes the controller class.
@@ -48,11 +52,19 @@ public class TeacherMainViewController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         tm = new teacherModel();
+        lom = new LogOutModel();
         populateList();
         welcomeMessage.setText("Welcome Jeppe!");
         welcomeMessage.setAlignment(Pos.CENTER);
     }    
 
+    /**
+     * Button that sends the user to the next window when the user has
+     * chosen a class.
+     * If the user has not chosen a class, an alert will pop up. 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handleNext(ActionEvent event) throws IOException
     {
@@ -81,23 +93,23 @@ public class TeacherMainViewController implements Initializable
         }
     }
     
+    /**
+     * Populates the ListView
+     */
     public void populateList()
     {
         classListView.setItems(tm.classList());
     }
 
+    /**
+     * Button that logs the user out.
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleLogOut(ActionEvent event) throws Exception
     {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/SignInView.fxml"));
-        Parent root = loader.load();
-        SignInViewController SIVController = loader.getController();
-       
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Sign in");
-        stage.show();
-        
+       lom.handelLogout();
         Stage oldStage = (Stage) logOutButton.getScene().getWindow();
         oldStage.close();
     }

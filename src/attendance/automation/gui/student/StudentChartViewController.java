@@ -6,6 +6,7 @@
 package attendance.automation.gui.student;
 
 import attendance.automation.gui.SignInViewController;
+import attendance.automation.gui.model.LogOutModel;
 import attendance.automation.gui.model.StudentModel;
 import java.io.IOException;
 import java.net.URL;
@@ -43,17 +44,25 @@ public class StudentChartViewController implements Initializable {
     @FXML
     private HBox hBox;
     private StudentModel sm;
-    /**
+    private LogOutModel lom;
+   
+   /**
      * Initializes the controller class.
-     */
+     */ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
         sm = new StudentModel();
+        lom = new LogOutModel();
         setPieChartData();
         setBarData();
+        
     }    
-    
+    /**
+     * logs out the current user, and opens the signInView
+     * @param event
+     * @throws IOException 
+     */
         @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
            Window window = studentChartRootpane.getScene().getWindow();
@@ -61,21 +70,14 @@ public class StudentChartViewController implements Initializable {
             if(window instanceof Stage){
             ((Stage) window).close();
             }
-            
-            FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
-          
-      
-        
+            lom.handelLogout();
     }
 
+    /**
+     * opens the studentMainView
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handelBackToMainView(ActionEvent event) throws IOException {
         
@@ -84,12 +86,16 @@ public class StudentChartViewController implements Initializable {
           studentChartRootpane.getChildren().setAll(pane);
     }
     
-    
+    /**
+     * sets the pie chart
+     */
     public void setPieChartData(){
         pieChart.getData().addAll(sm.setPiechartData());
         pieChart.setTitle("Total Overview");
     }
-    
+    /**
+     * sets the bar chart
+     */
     public void setBarData() {
         barChart.setTitle("Week overview");
         barChart.getData().addAll(sm.setPresence(),sm.setAbsent());

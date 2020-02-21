@@ -7,6 +7,7 @@ package attendance.automation.gui.student;
 
 import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.CalendarModel;
+import attendance.automation.gui.model.LogOutModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -78,6 +79,7 @@ public class StudentCalenderViewController implements Initializable {
     private Label weekLabel;
     
     private CalendarModel calendarModel;
+    private LogOutModel lom;
   
 
     public StudentCalenderViewController(){
@@ -85,19 +87,24 @@ public class StudentCalenderViewController implements Initializable {
     
     
     }
+  
     /**
      * Initializes the controller class.
-     * @param url
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
         calendarModel = new CalendarModel();
+        lom = new LogOutModel();
         setWeekLabel();
         
-        // TODO
     }    
 
+    /**
+     * opens the studentMainView
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handelBackToMainView(ActionEvent event) throws IOException {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml"));
@@ -107,6 +114,11 @@ public class StudentCalenderViewController implements Initializable {
         
         }
     
+    /**
+     * logs out the curent user, and opens the signInView
+     * @param event
+     * @throws IOException 
+     */
         @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
               Window window = studentCalenderRootpane.getScene().getWindow();
@@ -114,27 +126,25 @@ public class StudentCalenderViewController implements Initializable {
             if(window instanceof Stage){
             ((Stage) window).close();
             }
-            
-            FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
-        
+            lom.handelLogout();
     }
 
+    /**
+     * 
+     * @param event 
+     */
     @FXML
     private void handelSubmit(ActionEvent event) {
     }
    
+    /**
+     * sets the weekLabels text
+     */
     private void setWeekLabel()
     {
-        String label = "Week " + calendarModel.getCurrentWeek()+" of";
-        label += " " + calendarModel.getYear();
+        String label = "Week " + calendarModel.getCurrentWeek()+" of" + 
+                " " + calendarModel.getYear();
+        
         weekLabel.setText(label);
     }
 }

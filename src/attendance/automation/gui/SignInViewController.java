@@ -44,17 +44,16 @@ public class SignInViewController implements Initializable
     private Button signInButton;
     @FXML
     private Label label;
-    
-    private String userStudent;
-    private String passStudent;
-    private String userTeacher;
-    private String passTeacher;
+   
 
     private List<Student> StudentList;
     private StudentModel studentModel;
     private teacherModel teacherModel;
     public Student stud;
     
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb){
 
@@ -63,11 +62,6 @@ public class SignInViewController implements Initializable
         teacherModel = new teacherModel();
 
         
-        userStudent = "mads";
-        passStudent = "jensen";
-//        
-        userTeacher = "jeppe";
-        passTeacher = "baby";
     }    
 
     /**
@@ -84,10 +78,8 @@ public class SignInViewController implements Initializable
       String user = username.getText();
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
-     
-
-      if(user.equals(userStudent) && pass.equals(passStudent))
-
+      
+      if(user.toLowerCase().equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
                    
@@ -101,7 +93,7 @@ public class SignInViewController implements Initializable
           stage.show();
           signInView.close();
       }
-      else if(user.equals(userTeacher) && pass.equals(passTeacher))
+      else if(user.toLowerCase().equals(teacherModel.getUsername()) && pass.equals(teacherModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           

@@ -7,6 +7,7 @@ package attendance.automation.gui.student;
 
 import attendance.automation.be.Student;
 import attendance.automation.gui.SignInViewController;
+import attendance.automation.gui.model.LogOutModel;
 import attendance.automation.gui.model.StudentModel;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -56,6 +58,12 @@ public class StudentMainViewController implements Initializable
     
     private Student user;
     private StudentModel sm;
+    private LogOutModel lom;
+    
+    @FXML
+    private Label currentClassText;
+    @FXML
+    private HBox hBox;
    
     /**
      * Initializes the controller class.
@@ -66,16 +74,23 @@ public class StudentMainViewController implements Initializable
         
 
        Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
-        setName(mads);
+       setName(mads);
+       lom = new LogOutModel();
 
 
     }    
     
+
   public void setSM(StudentModel sm1){
   this.sm = sm1;
   
   }
+
     
+    /**
+     * Sets the lbWelcome text to the logged in student
+     * @param stud 
+     */
     public void setName(Student stud){
               
         lbWelcome.setText("Welcome " + stud.getName() + "!");
@@ -83,7 +98,11 @@ public class StudentMainViewController implements Initializable
     }
     
    
-    
+    /**
+     * Logs out the current user, and opens the signInView
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
             
@@ -92,20 +111,13 @@ public class StudentMainViewController implements Initializable
             if(window instanceof Stage){
             ((Stage) window).close();
             }
-            
-            FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
-      
-        
+           lom.handelLogout();
     }
 
+    /**
+     * opens the StudentCalenderView
+     * @param event 
+     */
     @FXML
     private void handelCalenderview(ActionEvent event)  {
             
@@ -118,12 +130,14 @@ public class StudentMainViewController implements Initializable
         } catch (IOException ex)
         {
             System.out.println(ex);
-        }
-     
-     
-        
+        }    
     }
-
+    
+    
+    /**
+     *  Opens the StudentChartView
+     * @param event 
+     */
       @FXML
     private void handelPieChart (ActionEvent event)  {
             
@@ -146,15 +160,19 @@ public class StudentMainViewController implements Initializable
         
     }
     
+    /**
+     * 
+     * @param event 
+     */
     @FXML
     private void handelSubmit(ActionEvent event) {
         
-        sm.addData();
+        //sm.addData();
+        
+        studentRootPane.getChildren().remove(hBox);
+        currentClassText.setText("Thank you!");
         
     }
    
-    public void transferStudent(Student stud){
-      this.user = stud;  //tænker den er relvant for at få infor mede over i studentviewet 
-    }
 
 }

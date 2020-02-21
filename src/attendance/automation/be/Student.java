@@ -26,9 +26,9 @@ public class Student {
     public Student(String name, int id, String username, String password)
     {
         this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty();
-        this.username = new SimpleStringProperty();
-        this.password = new SimpleStringProperty();
+        this.name = new SimpleStringProperty(name);
+        this.username = new SimpleStringProperty(username);
+        this.password = new SimpleStringProperty(password);
         
     }
 
