@@ -33,11 +33,6 @@
             <RowConstraints maxHeight="70.8" minHeight="10.0" prefHeight="36.79998779296875" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label prefWidth="194.0" stylesheets="@css/SignInSheet.css" text="Username:">
-               <font>
-                  <Font name="Lemonada Medium" size="15.0" />
-               </font>
-            </Label>
             <TextField fx:id="username" promptText="Username" GridPane.columnIndex="1" />
             <Label stylesheets="@css/SignInSheet.css" text="Password:" GridPane.rowIndex="1">
                <font>
@@ -45,6 +40,11 @@
                </font>
             </Label>
             <PasswordField fx:id="password" promptText="Password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label prefHeight="22.0" prefWidth="98.0" stylesheets="@css/SignInSheet.css" text="Username:">
+               <font>
+                  <Font name="Lemonada Medium" size="15.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
       <Button fx:id="signInButton" layoutX="279.0" layoutY="164.0" mnemonicParsing="false" onAction="#handleSignIn" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #FBBB2C;" text="Sign in">

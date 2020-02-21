@@ -65,9 +65,10 @@ public class StudentMainViewController implements Initializable
     {
         
 
-       //Student mads = new Student("Gurli Hansen", 5, "mads", "jensen");
+       Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
+        setName(mads);
 
-        setName(user);
+
     }    
     
     public void getStudentFromLogin(Student stud){
@@ -76,7 +77,7 @@ public class StudentMainViewController implements Initializable
     
     public void setName(Student stud){
               
-        lbWelcome.setText("Welcome " + stud.getName());
+        lbWelcome.setText("Welcome " + stud.getName() + "!");
               
     }
     
@@ -143,7 +144,7 @@ public class StudentMainViewController implements Initializable
     @FXML
     private void handelSubmit(ActionEvent event) {
         
-        
+        sm.addData();
         
     }
    
