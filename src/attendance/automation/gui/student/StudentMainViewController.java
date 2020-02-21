@@ -71,9 +71,10 @@ public class StudentMainViewController implements Initializable
 
     }    
     
-    public void getStudentFromLogin(Student stud){
-        
-    }
+  public void setSM(StudentModel sm1){
+  this.sm = sm1;
+  
+  }
     
     public void setName(Student stud){
               
@@ -128,9 +129,13 @@ public class StudentMainViewController implements Initializable
             
        try
         {
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentChartView.fxml"));
-                
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            AnchorPane pane = fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentChartView.fxml"));
+            StudentChartViewController cont = (StudentChartViewController) fxmlLoader.getController();
+            cont.setSM(sm);            
+            
             studentRootPane.getChildren().setAll(pane);
+            
   
         } catch (IOException ex)
         {
