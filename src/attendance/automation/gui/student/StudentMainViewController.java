@@ -145,8 +145,8 @@ public class StudentMainViewController implements Initializable
         {
             FXMLLoader fxmlLoader = new FXMLLoader();
             AnchorPane pane = fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentChartView.fxml"));
-            StudentChartViewController cont = (StudentChartViewController) fxmlLoader.getController();
-            cont.setSM(sm);            
+           // StudentChartViewController cont = (StudentChartViewController) fxmlLoader.getController();
+           // cont.setSM(sm);            
             
             studentRootPane.getChildren().setAll(pane);
             
