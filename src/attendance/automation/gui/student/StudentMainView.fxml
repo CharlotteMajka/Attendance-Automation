@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
+<AnchorPane fx:id="studentRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.automation.gui.student.StudentMainViewController">
    <children>
 
       <StackPane layoutX="-14.0" layoutY="189.0" prefHeight="104.0" prefWidth="894.0" style="-fx-background-color: #FBBB2C;">
@@ -31,7 +31,7 @@
       </StackPane>
       <StackPane layoutX="235.0" layoutY="293.0" prefHeight="53.0" prefWidth="426.0">
          <children>
-            <Label text="Are you here for todays current Class?">
+            <Label text="Are you here for your current class?">
                <font>
                   <Font name="Arial" size="22.0" />
                </font>
@@ -62,15 +62,15 @@
                   <ToggleGroup fx:id="precent" />
                </toggleGroup>
                <padding>
-                  <Insets right="20.0" />
+                  <Insets right="20.0" top="6.0" />
                </padding>
             </RadioButton>
             <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="No" toggleGroup="$precent">
                <padding>
-                  <Insets right="20.0" />
+                  <Insets right="20.0" top="6.0" />
                </padding>
             </RadioButton>
-            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="9.0" prefWidth="73.0" style="-fx-background-color: #FBBB2C;" text="Submit" textAlignment="CENTER">
+            <Button fx:id="submitprecense" mnemonicParsing="false" onAction="#handelSubmit" prefHeight="22.0" prefWidth="71.0" style="-fx-background-color: #FBBB2C;" text="Submit" textAlignment="CENTER">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>

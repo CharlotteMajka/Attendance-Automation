@@ -76,7 +76,7 @@ public class StudentMainViewController implements Initializable
     
     public void setName(Student stud){
               
-        lbWelcome.setText("Welcome " + stud.getName());
+        lbWelcome.setText("Welcome " + stud.getName() + "!");
               
     }
     
