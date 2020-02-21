@@ -5,6 +5,7 @@
  */
 package attendance.automation.gui.teacher;
 
+import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.teacherModel;
 import java.io.IOException;
 import java.net.URL;
@@ -37,6 +38,8 @@ public class TeacherMainViewController implements Initializable
     private teacherModel tm;
     @FXML
     private Label welcomeMessage;
+    @FXML
+    private Button logOutButton;
 
     /**
      * Initializes the controller class.
@@ -81,5 +84,21 @@ public class TeacherMainViewController implements Initializable
     public void populateList()
     {
         classListView.setItems(tm.classList());
+    }
+
+    @FXML
+    private void handleLogOut(ActionEvent event) throws Exception
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/SignInView.fxml"));
+        Parent root = loader.load();
+        SignInViewController SIVController = loader.getController();
+       
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Sign in");
+        stage.show();
+        
+        Stage oldStage = (Stage) logOutButton.getScene().getWindow();
+        oldStage.close();
     }
 }

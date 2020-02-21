@@ -66,7 +66,7 @@ public class StudentMainViewController implements Initializable
         
 
        Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
-        setName(mads);
+       setName(mads);
 
 
     }    
