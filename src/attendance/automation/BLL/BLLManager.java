@@ -37,21 +37,21 @@ public class BLLManager {
        return md.teacherStudentList();
    }
     
-   public void getUsernameStudent()
+   public String getUsernameStudent()
    {
-       md.getUsernameStudent();
+       return md.getUsernameStudent();
    }
-   public void getPasswordStudent()
+   public String getPasswordStudent()
    {
-       md.getPasswordStudent();
+       return md.getPasswordStudent();
    }
-   public void getUsernameTeacher()
+   public String getUsernameTeacher()
    {
-       md.getUsernameTeacher();
+       return md.getUsernameTeacher();
    }
-   public void getPasswordTeacher()
+   public String getPasswordTeacher()
    {
-       md.getPasswordTeacher();
+       return md.getPasswordTeacher();
    }
 
     

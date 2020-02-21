@@ -106,12 +106,12 @@ public class StudentModel {
 
     public String getUsername()
     {
-        return md.getUsernameStudent();
+        return bll.getUsernameStudent();
     }
 
     public String getPassword()
     {
-        return md.getPasswordStudent();
+        return bll.getPasswordStudent();
     }
 
     

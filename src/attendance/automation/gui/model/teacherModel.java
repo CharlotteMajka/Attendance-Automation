@@ -7,7 +7,6 @@ package attendance.automation.gui.model;
 
 import attendance.automation.BLL.BLLManager;
 import attendance.automation.be.Student;
-import attendance.automation.dal.MockData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,18 +16,12 @@ import javafx.collections.ObservableList;
  */
 public class teacherModel
 {
-    BLLManager bll = new BLLManager();
-    
-    
-    private String username;
-    private String password;
-    private MockData md;
+    private BLLManager bll;
+  
     
     public teacherModel()
     {
-        username = "jeppe";
-        password = "baby";
-        md = new MockData();
+        bll = new BLLManager();
     }
     
     public ObservableList classList()
@@ -43,13 +36,13 @@ public class teacherModel
 
     public String getUsername()
     {
-        return md.getUsernameTeacher();
+        return bll.getUsernameTeacher();
     }
 
 
     public String getPassword()
     {
-        return md.getPasswordTeacher();
+        return bll.getPasswordTeacher();
     }
 
     

@@ -76,7 +76,7 @@ public class SignInViewController implements Initializable
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
-      if(user.equals(studentModel.getUsername().toLowerCase()) && pass.equals(studentModel.getPassword()))
+      if(user.toLowerCase().equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
                    
@@ -90,7 +90,7 @@ public class SignInViewController implements Initializable
           stage.show();
           signInView.close();
       }
-      else if(user.equals(userTeacher) && pass.equals(passTeacher))
+      else if(user.toLowerCase().equals(teacherModel.getUsername()) && pass.equals(teacherModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           
