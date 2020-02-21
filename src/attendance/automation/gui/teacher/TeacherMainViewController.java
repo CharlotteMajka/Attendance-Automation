@@ -37,6 +37,8 @@ public class TeacherMainViewController implements Initializable
     private teacherModel tm;
     @FXML
     private Label welcomeMessage;
+    @FXML
+    private Button logOutButton;
 
     /**
      * Initializes the controller class.
@@ -81,5 +83,21 @@ public class TeacherMainViewController implements Initializable
     public void populateList()
     {
         classListView.setItems(tm.classList());
+    }
+
+    @FXML
+    private void handleLogOut(ActionEvent event) throws Exception
+    {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/SignInView.fxml"));
+        Parent root = loader.load();
+        TeacherClassViewController TCVController = loader.getController();
+       
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.setTitle("Sign in");
+        stage.show();
+        
+        Stage oldStage = (Stage) logOutButton.getScene().getWindow();
+        oldStage.close();
     }
 }
