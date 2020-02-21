@@ -18,20 +18,21 @@ import javafx.stage.Stage;
  */
 public class LogOutModel
 {
-    
+
     /**
      * opens a new window
-     * @throws IOException 
+     *
+     * @throws IOException
      */
     public void handelLogout() throws IOException
     {
         FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
+
+        Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
+        SignInViewController cont = (SignInViewController) fxmlLoader.getController();
+        Stage stage = new Stage();
+        stage.setTitle("Sign in");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }

@@ -5,7 +5,6 @@
  */
 package attendance.automation.gui.teacher;
 
-import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.LogOutModel;
 import attendance.automation.gui.model.teacherModel;
 import java.io.IOException;
@@ -36,12 +35,12 @@ public class TeacherMainViewController implements Initializable
     private ListView<?> classListView;
     @FXML
     private Button nextButton;
-    
+
     @FXML
     private Label welcomeMessage;
     @FXML
     private Button logOutButton;
-    
+
     private LogOutModel lom;
     private teacherModel tm;
 
@@ -56,43 +55,41 @@ public class TeacherMainViewController implements Initializable
         populateList();
         welcomeMessage.setText("Welcome Jeppe!");
         welcomeMessage.setAlignment(Pos.CENTER);
-    }    
+    }
 
     /**
-     * Button that sends the user to the next window when the user has
-     * chosen a class.
-     * If the user has not chosen a class, an alert will pop up. 
+     * Button that sends the user to the next window when the user has chosen a
+     * class. If the user has not chosen a class, an alert will pop up.
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void handleNext(ActionEvent event) throws IOException
     {
-        if(classListView.getSelectionModel().getSelectedItem() != null)
+        if (classListView.getSelectionModel().getSelectedItem() != null)
         {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/teacher/TeacherClassView.fxml"));
             Parent root = loader.load();
             TeacherClassViewController TCVController = loader.getController();
-        
+
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setTitle("Attendance - Teacher");
             stage.show();
-            
-        
+
             Stage oldStage = (Stage) nextButton.getScene().getWindow();
             oldStage.close();
-        }
-        else
+        } else
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Oops");
-                alert.setHeaderText("Oops, something went wrong");
-                alert.setContentText("Please select a class to continue");
-                alert.showAndWait();
+            alert.setTitle("Oops");
+            alert.setHeaderText("Oops, something went wrong");
+            alert.setContentText("Please select a class to continue");
+            alert.showAndWait();
         }
     }
-    
+
     /**
      * Populates the ListView
      */
@@ -103,13 +100,14 @@ public class TeacherMainViewController implements Initializable
 
     /**
      * Button that logs the user out.
+     *
      * @param event
-     * @throws Exception 
+     * @throws Exception
      */
     @FXML
     private void handleLogOut(ActionEvent event) throws Exception
     {
-       lom.handelLogout();
+        lom.handelLogout();
         Stage oldStage = (Stage) logOutButton.getScene().getWindow();
         oldStage.close();
     }

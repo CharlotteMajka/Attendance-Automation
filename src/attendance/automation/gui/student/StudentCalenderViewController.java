@@ -5,7 +5,6 @@
  */
 package attendance.automation.gui.student;
 
-import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.CalendarModel;
 import attendance.automation.gui.model.LogOutModel;
 import java.io.IOException;
@@ -15,10 +14,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -32,7 +27,9 @@ import javafx.stage.Window;
  *
  * @author Charlotte
  */
-public class StudentCalenderViewController implements Initializable {
+public class StudentCalenderViewController implements Initializable
+{
+
     @FXML
     private AnchorPane studentCalenderRootpane;
     @FXML
@@ -77,74 +74,78 @@ public class StudentCalenderViewController implements Initializable {
     private Button submitprecense4;
     @FXML
     private Label weekLabel;
-    
+
     private CalendarModel calendarModel;
     private LogOutModel lom;
-  
 
-    public StudentCalenderViewController(){
-        
-    
-    
+    public StudentCalenderViewController()
+    {
+
     }
-  
+
     /**
      * Initializes the controller class.
      */
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        
+    public void initialize(URL url, ResourceBundle rb)
+    {
+
         calendarModel = new CalendarModel();
         lom = new LogOutModel();
         setWeekLabel();
-        
-    }    
+
+    }
 
     /**
      * opens the studentMainView
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
-    private void handelBackToMainView(ActionEvent event) throws IOException {
+    private void handelBackToMainView(ActionEvent event) throws IOException
+    {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml"));
 
         studentCalenderRootpane.getChildren().setAll(pane);
-       
-        
-        }
-    
-    /**
-     * logs out the curent user, and opens the signInView
-     * @param event
-     * @throws IOException 
-     */
-        @FXML
-    private void HandleLogout(ActionEvent event) throws IOException {
-              Window window = studentCalenderRootpane.getScene().getWindow();
-            
-            if(window instanceof Stage){
-            ((Stage) window).close();
-            }
-            lom.handelLogout();
+
     }
 
     /**
-     * 
-     * @param event 
+     * logs out the curent user, and opens the signInView
+     *
+     * @param event
+     * @throws IOException
      */
     @FXML
-    private void handelSubmit(ActionEvent event) {
+    private void HandleLogout(ActionEvent event) throws IOException
+    {
+        Window window = studentCalenderRootpane.getScene().getWindow();
+
+        if (window instanceof Stage)
+        {
+            ((Stage) window).close();
+        }
+        lom.handelLogout();
     }
-   
+
+    /**
+     *
+     * @param event
+     */
+    @FXML
+    private void handelSubmit(ActionEvent event)
+    {
+    }
+
     /**
      * sets the weekLabels text
      */
     private void setWeekLabel()
     {
-        String label = "Week " + calendarModel.getCurrentWeek()+" of" + 
-                " " + calendarModel.getYear();
-        
+        String label = "Week " + calendarModel.getCurrentWeek() + " of"
+                + " " + calendarModel.getYear();
+
         weekLabel.setText(label);
     }
 }

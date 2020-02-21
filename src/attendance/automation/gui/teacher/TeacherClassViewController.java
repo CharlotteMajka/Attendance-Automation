@@ -43,7 +43,7 @@ public class TeacherClassViewController implements Initializable
     private Button backButton;
     @FXML
     private PieChart pieChart;
-    
+
     private teacherModel tm;
 
     @FXML
@@ -52,9 +52,7 @@ public class TeacherClassViewController implements Initializable
     public TableColumn<Student, Integer> absenceProcent;
     @FXML
     public TableColumn<Student, String> dayMostAbsent;
-    
-    
-    
+
     /**
      * Initializes the controller class.
      */
@@ -64,17 +62,18 @@ public class TeacherClassViewController implements Initializable
         tm = new teacherModel();
         populateList();
         fillPieChart();
-        
+
         classNameLabel.setText("CSe2019A");
         classNameLabel.setAlignment(Pos.CENTER);
         absenceProcent.setSortType(TableColumn.SortType.DESCENDING);
         classTableView.getSortOrder().addAll(absenceProcent);
-    }    
+    }
 
     /**
-     * Button that sends the user back to the TeacherMainView. 
+     * Button that sends the user back to the TeacherMainView.
+     *
      * @param event
-     * @throws IOException 
+     * @throws IOException
      */
     @FXML
     private void handleBack(ActionEvent event) throws IOException
@@ -82,16 +81,16 @@ public class TeacherClassViewController implements Initializable
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/teacher/TeacherMainView.fxml"));
         Parent root = loader.load();
         TeacherMainViewController TMVController = loader.getController();
-            
+
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
         stage.setTitle("Attendance - Teacher");
         stage.show();
-        
+
         Stage oldStage = (Stage) backButton.getScene().getWindow();
         oldStage.close();
     }
-    
+
     /**
      * Populates the TableView.
      */
@@ -102,7 +101,7 @@ public class TeacherClassViewController implements Initializable
         dayMostAbsent.setCellValueFactory(new PropertyValueFactory<Student, String>("dayMostAbsent"));
         classTableView.setItems(tm.studentList());
     }
-    
+
     /**
      * Fills the pie chart with information.
      */
@@ -113,15 +112,15 @@ public class TeacherClassViewController implements Initializable
         {
             totalAbsence = totalAbsence + student.getAbsenceProcent();
         }
-        totalAbsence = totalAbsence/tm.studentList().size();
-        
-        int totalPresence = 100-totalAbsence;
-        
+        totalAbsence = totalAbsence / tm.studentList().size();
+
+        int totalPresence = 100 - totalAbsence;
+
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-            new PieChart.Data("Total Class Absence: " + totalAbsence + "%", totalAbsence),
-            new PieChart.Data("Total Class Presence: " + totalPresence + "%", totalPresence)
+                new PieChart.Data("Total Class Absence: " + totalAbsence + "%", totalAbsence),
+                new PieChart.Data("Total Class Presence: " + totalPresence + "%", totalPresence)
         );
-        
+
         pieChart.setData(pieChartData);
         pieChart.setTitle("Class Absence");
         pieChart.setClockwise(true);
@@ -130,6 +129,6 @@ public class TeacherClassViewController implements Initializable
         pieChart.setLegendVisible(true);
         pieChart.setStartAngle(180);
         pieChart.setMinSize(100, 100);
-        
+
     }
 }

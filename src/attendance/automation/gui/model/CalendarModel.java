@@ -11,26 +11,42 @@ import java.util.Calendar;
  *
  * @author Charlotte
  */
-public class CalendarModel {
-    
-    
+public class CalendarModel
+{
+
     Calendar calendar = Calendar.getInstance();
-    
-    public int getCurrentMonth(){
-        
+
+    /**
+     * Get the current month
+     *
+     * @return Month as an int
+     */
+    public int getCurrentMonth()
+    {
+
         return calendar.get(Calendar.MONTH);
-        
+
     }
-    
-    
-    public int getCurrentWeek(){
-        
+
+    /**
+     * Get the current Week
+     *
+     * @return Week as an int
+     */
+    public int getCurrentWeek()
+    {
+
         return calendar.get(Calendar.WEEK_OF_YEAR);
     }
-    
-    
-    public int getYear(){
-    return calendar.get(Calendar.YEAR);
-    
+
+    /**
+     * Get the year
+     *
+     * @return year as an int
+     */
+    public int getYear()
+    {
+        return calendar.get(Calendar.YEAR);
+
     }
 }
