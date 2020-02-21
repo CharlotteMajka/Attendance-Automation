@@ -100,7 +100,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </RadioButton>
-                  <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="nop" toggleGroup="$precent">
+                  <RadioButton fx:id="rbNotHeretoday" mnemonicParsing="false" text="no" toggleGroup="$precent">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -120,7 +120,7 @@
             </HBox>
             <HBox prefHeight="36.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <RadioButton fx:id="rbHeretoday1" mnemonicParsing="false" text="yep">
+                  <RadioButton fx:id="rbHeretoday1" mnemonicParsing="false" text="yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="precent1" />
                      </toggleGroup>
@@ -156,7 +156,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </RadioButton>
-                  <RadioButton fx:id="rbNotHeretoday2" mnemonicParsing="false" text="nop" toggleGroup="$precent2">
+                  <RadioButton fx:id="rbNotHeretoday2" mnemonicParsing="false" text="no" toggleGroup="$precent2">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -176,7 +176,7 @@
             </HBox>
             <HBox prefHeight="36.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <RadioButton fx:id="rbHeretoday3" mnemonicParsing="false" text="yep">
+                  <RadioButton fx:id="rbHeretoday3" mnemonicParsing="false" text="yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="precent3" />
                      </toggleGroup>
@@ -184,7 +184,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </RadioButton>
-                  <RadioButton fx:id="rbNotHeretoday3" mnemonicParsing="false" text="nop" toggleGroup="$precent3">
+                  <RadioButton fx:id="rbNotHeretoday3" mnemonicParsing="false" text="no" toggleGroup="$precent3">
                      <padding>
                         <Insets right="20.0" />
                      </padding>
@@ -204,7 +204,7 @@
             </HBox>
             <HBox prefHeight="36.0" prefWidth="208.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <RadioButton fx:id="rbHeretoday4" mnemonicParsing="false" text="yep">
+                  <RadioButton fx:id="rbHeretoday4" mnemonicParsing="false" text="yes">
                      <toggleGroup>
                         <ToggleGroup fx:id="precent4" />
                      </toggleGroup>
@@ -212,7 +212,7 @@
                         <Insets right="20.0" />
                      </padding>
                   </RadioButton>
-                  <RadioButton fx:id="rbNotHeretoday4" mnemonicParsing="false" text="nop" toggleGroup="$precent4">
+                  <RadioButton fx:id="rbNotHeretoday4" mnemonicParsing="false" text="no" toggleGroup="$precent4">
                      <padding>
                         <Insets right="20.0" />
                      </padding>

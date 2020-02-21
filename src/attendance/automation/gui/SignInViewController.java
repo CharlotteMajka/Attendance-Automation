@@ -99,7 +99,7 @@ public class SignInViewController implements Initializable
           stage.setTitle("Attendance - Student");
           stage.setScene(new Scene(root));
           stage.show();
-          signInView.hide();
+          signInView.close();
       }
       else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
@@ -111,7 +111,7 @@ public class SignInViewController implements Initializable
           stage.setTitle("Attendance - Teacher");
           stage.setScene(new Scene(root));
           stage.show();
-          signInView.hide();
+          signInView.close();
       }
       else
       {
