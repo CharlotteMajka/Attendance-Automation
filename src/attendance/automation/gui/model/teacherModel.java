@@ -16,16 +16,12 @@ import javafx.collections.ObservableList;
  */
 public class teacherModel
 {
-    BLLManager bll = new BLLManager();
-    
-    
-    private String username;
-    private String password;
+    private BLLManager bll;
+  
     
     public teacherModel()
     {
-        username = "jeppe";
-        password = "baby";
+        bll = new BLLManager();
     }
     
     public ObservableList classList()
@@ -40,22 +36,14 @@ public class teacherModel
 
     public String getUsername()
     {
-        return username;
+        return bll.getUsernameTeacher();
     }
 
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
 
     public String getPassword()
     {
-        return password;
+        return bll.getPasswordTeacher();
     }
 
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
     
 }

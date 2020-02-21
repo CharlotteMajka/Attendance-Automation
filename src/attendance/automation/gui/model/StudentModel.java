@@ -7,6 +7,7 @@ package attendance.automation.gui.model;
 
 import attendance.automation.BLL.BLLManager;
 import attendance.automation.be.Student;
+import attendance.automation.dal.MockData;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -101,23 +102,13 @@ public void addData()
 
     public String getUsername()
     {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
+        return bll.getUsernameStudent();
     }
 
     public String getPassword()
     {
-        return password;
+        return bll.getPasswordStudent();
     }
 
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
-     
     
 }

@@ -37,6 +37,26 @@ public class BLLManager {
        return md.teacherStudentList();
    }
     
+   public String getUsernameStudent()
+   {
+       return md.getUsernameStudent();
+   }
+   public String getPasswordStudent()
+   {
+       return md.getPasswordStudent();
+   }
+   public String getUsernameTeacher()
+   {
+       return md.getUsernameTeacher();
+   }
+   public String getPasswordTeacher()
+   {
+       return md.getPasswordTeacher();
+   }
+
+    
+ 
+    
    public ObservableList getTeacherClassList()
    {
        return md.teacherClassList();
