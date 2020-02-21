@@ -53,18 +53,18 @@ public class SignInViewController implements Initializable
     private List<Student> StudentList;
     private StudentModel studentModel;
     private teacherModel teacherModel;
-
+    public Student stud;
     
     @Override
-    public void initialize(URL url, ResourceBundle rb)
+    public void initialize(URL url, ResourceBundle rb){
 
 
         studentModel = new StudentModel();
         teacherModel = new teacherModel();
 
         
-        userStudent = "mads";
-        passStudent = "jensen";
+        //userStudent = "mads";
+        //passStudent = "jensen";
 //        
         userTeacher = "jeppe";
         passTeacher = "baby";
@@ -79,30 +79,29 @@ public class SignInViewController implements Initializable
     @FXML
     private void handleSignIn(ActionEvent event) throws IOException
     {
-    //Student stud = sm.getoneStudent(username.getText(), password.getText());
+    
         
       String user = username.getText();
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
-      
+      this.stud = studentModel.getoneStudent(user, pass);
 
-      if(user.equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
+      if(stud instanceof Student)
 
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
-         
-          
+                   
           Parent root;
           root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml").openStream());
           StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
-          //StudentMainViewController.transferStudent(stud);
+          cont.transferStudent(stud);
           Stage stage = new Stage();
           stage.setTitle("Attendance - Student");
           stage.setScene(new Scene(root));
           stage.show();
           signInView.hide();
       }
-      else if(user.equals(teacherModel.getUsername()) && pass.equals(teacherModel.getPassword()))
+      else if(user.equals(userTeacher) && pass.equals(passTeacher))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
           

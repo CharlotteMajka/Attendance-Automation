@@ -25,8 +25,8 @@ public class StudentModel {
         private final  String wednesday = "Wednesday";
         private final  String thursday = "Thursday";
         private final  String friday = "Friday";
-        private List<Student> listofStudents;
-        private BLLManager bll;
+       // private final List<Student> listofStudents;
+        private final BLLManager bll;
         private String username;
         private String password;
         
@@ -34,23 +34,27 @@ public class StudentModel {
         bll = new BLLManager();
        
 
-        listofStudents = bll.getStudentList();
+        
 
        
        } 
         
     public Student getoneStudent(String username, String password){
+       List<Student> listwithstudents = bll.getStudentList();
         
-        for (Student student : listofStudents)
+        Student stud = null;
+        for (Student student : listwithstudents)
         {
+                
              if(student.getUsername().equals(username) && student.getPassword().equals(password) ){
-             
-                 return student;
+                 
+                stud = student;
+                 break;
                  
              }
         }
         
-        return null;     
+        return stud;     
  
     }
     

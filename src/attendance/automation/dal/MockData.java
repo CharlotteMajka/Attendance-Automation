@@ -22,7 +22,7 @@ public class MockData {
  
     
         
-     public List<Student> studentList()
+     public List<Student> getstudentList()
     {
         
         Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
