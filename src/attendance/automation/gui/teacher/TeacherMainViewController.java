@@ -5,6 +5,7 @@
  */
 package attendance.automation.gui.teacher;
 
+import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.teacherModel;
 import java.io.IOException;
 import java.net.URL;
@@ -90,7 +91,7 @@ public class TeacherMainViewController implements Initializable
     {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendance/automation/gui/SignInView.fxml"));
         Parent root = loader.load();
-        TeacherClassViewController TCVController = loader.getController();
+        SignInViewController SIVController = loader.getController();
        
         Stage stage = new Stage();
         stage.setScene(new Scene(root));
