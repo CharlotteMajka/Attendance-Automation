@@ -51,6 +51,9 @@ public class SignInViewController implements Initializable
     private teacherModel teacherModel;
     public Student stud;
     
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb){
 

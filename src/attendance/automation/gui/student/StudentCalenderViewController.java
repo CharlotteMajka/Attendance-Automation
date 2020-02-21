@@ -7,6 +7,7 @@ package attendance.automation.gui.student;
 
 import attendance.automation.gui.SignInViewController;
 import attendance.automation.gui.model.CalendarModel;
+import attendance.automation.gui.model.LogOutModel;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -78,6 +79,7 @@ public class StudentCalenderViewController implements Initializable {
     private Label weekLabel;
     
     private CalendarModel calendarModel;
+    private LogOutModel lom;
   
 
     public StudentCalenderViewController(){
@@ -86,10 +88,14 @@ public class StudentCalenderViewController implements Initializable {
     
     }
   
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
         calendarModel = new CalendarModel();
+        lom = new LogOutModel();
         setWeekLabel();
         
     }    
@@ -120,17 +126,7 @@ public class StudentCalenderViewController implements Initializable {
             if(window instanceof Stage){
             ((Stage) window).close();
             }
-            
-            FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
-        
+            lom.handelLogout();
     }
 
     /**

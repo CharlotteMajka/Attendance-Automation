@@ -7,6 +7,7 @@ package attendance.automation.gui.student;
 
 import attendance.automation.be.Student;
 import attendance.automation.gui.SignInViewController;
+import attendance.automation.gui.model.LogOutModel;
 import attendance.automation.gui.model.StudentModel;
 import java.io.IOException;
 import java.net.URL;
@@ -56,8 +57,11 @@ public class StudentMainViewController implements Initializable
     
     private Student user;
     private StudentModel sm;
+    private LogOutModel lom;
    
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -65,6 +69,7 @@ public class StudentMainViewController implements Initializable
 
        Student mads = new Student("Mads Jensen", 5, "mads", "jensen");
        setName(mads);
+       lom = new LogOutModel();
 
 
     }    
@@ -94,18 +99,7 @@ public class StudentMainViewController implements Initializable
             if(window instanceof Stage){
             ((Stage) window).close();
             }
-            
-            FXMLLoader fxmlLoader = new FXMLLoader();
-         
-            Parent root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/SignInView.fxml").openStream());
-            SignInViewController cont = (SignInViewController) fxmlLoader.getController();
-            Stage stage = new Stage();
-            
-            stage.setTitle("Sign in");
-            stage.setScene(new Scene(root));
-            stage.show();
-      
-        
+           lom.handelLogout();
     }
 
     /**
