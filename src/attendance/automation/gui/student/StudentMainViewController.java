@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -56,6 +57,11 @@ public class StudentMainViewController implements Initializable
     
     private Student user;
     private StudentModel sm;
+    
+    @FXML
+    private Label currentClassText;
+    @FXML
+    private HBox hBox;
    
     /**
      * Initializes the controller class.
@@ -144,7 +150,10 @@ public class StudentMainViewController implements Initializable
     @FXML
     private void handelSubmit(ActionEvent event) {
         
-        sm.addData();
+        //sm.addData();
+        
+        studentRootPane.getChildren().remove(hBox);
+        currentClassText.setText("Thank you!");
         
     }
    
