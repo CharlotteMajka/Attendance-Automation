@@ -43,9 +43,8 @@ public class StudentChartViewController implements Initializable {
     @FXML
     private HBox hBox;
     private StudentModel sm;
-    /**
-     * Initializes the controller class.
-     */
+   
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
      
@@ -53,7 +52,11 @@ public class StudentChartViewController implements Initializable {
         setPieChartData();
         setBarData();
     }    
-    
+    /**
+     * logs out the current user, and opens the signInView
+     * @param event
+     * @throws IOException 
+     */
         @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
            Window window = studentChartRootpane.getScene().getWindow();
@@ -76,6 +79,11 @@ public class StudentChartViewController implements Initializable {
         
     }
 
+    /**
+     * opens the studentMainView
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handelBackToMainView(ActionEvent event) throws IOException {
         
@@ -84,12 +92,16 @@ public class StudentChartViewController implements Initializable {
           studentChartRootpane.getChildren().setAll(pane);
     }
     
-    
+    /**
+     * sets the pie chart
+     */
     public void setPieChartData(){
         pieChart.getData().addAll(sm.setPiechartData());
         pieChart.setTitle("Total Overview");
     }
-    
+    /**
+     * sets the bar chart
+     */
     public void setBarData() {
         barChart.setTitle("Week overview");
         barChart.getData().addAll(sm.setPresence(),sm.setAbsent());

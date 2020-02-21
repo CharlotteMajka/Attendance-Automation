@@ -83,7 +83,6 @@ public class SignInViewController implements Initializable
           Parent root;
           root = (Parent) fxmlLoader.load(getClass().getResource("/attendance/automation/gui/student/StudentMainView.fxml").openStream());
           StudentMainViewController cont = (StudentMainViewController) fxmlLoader.getController();
-          cont.transferStudent(stud);
           Stage stage = new Stage();
           stage.setTitle("Attendance - Student");
           stage.setScene(new Scene(root));

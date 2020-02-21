@@ -63,9 +63,7 @@ public class StudentMainViewController implements Initializable
     @FXML
     private HBox hBox;
    
-    /**
-     * Initializes the controller class.
-     */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
@@ -77,10 +75,11 @@ public class StudentMainViewController implements Initializable
 
     }    
     
-    public void getStudentFromLogin(Student stud){
-        
-    }
     
+    /**
+     * Sets the lbWelcome text to the logged in student
+     * @param stud 
+     */
     public void setName(Student stud){
               
         lbWelcome.setText("Welcome " + stud.getName() + "!");
@@ -88,7 +87,11 @@ public class StudentMainViewController implements Initializable
     }
     
    
-    
+    /**
+     * Logs out the current user, and opens the signInView
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void HandleLogout(ActionEvent event) throws IOException {
             
@@ -111,6 +114,10 @@ public class StudentMainViewController implements Initializable
         
     }
 
+    /**
+     * opens the StudentCalenderView
+     * @param event 
+     */
     @FXML
     private void handelCalenderview(ActionEvent event)  {
             
@@ -123,12 +130,14 @@ public class StudentMainViewController implements Initializable
         } catch (IOException ex)
         {
             System.out.println(ex);
-        }
-     
-     
-        
+        }    
     }
-
+    
+    
+    /**
+     *  Opens the StudentChartView
+     * @param event 
+     */
       @FXML
     private void handelPieChart (ActionEvent event)  {
             
@@ -147,6 +156,10 @@ public class StudentMainViewController implements Initializable
         
     }
     
+    /**
+     * 
+     * @param event 
+     */
     @FXML
     private void handelSubmit(ActionEvent event) {
         
@@ -157,8 +170,5 @@ public class StudentMainViewController implements Initializable
         
     }
    
-    public void transferStudent(Student stud){
-      this.user = stud;  //tænker den er relvant for at få infor mede over i studentviewet 
-    }
 
 }
