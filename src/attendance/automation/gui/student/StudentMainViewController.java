@@ -143,7 +143,7 @@ public class StudentMainViewController implements Initializable
     @FXML
     private void handelSubmit(ActionEvent event) {
         
-        
+        sm.addData();
         
     }
    
