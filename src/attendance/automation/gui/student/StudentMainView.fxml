@@ -31,7 +31,7 @@
       </StackPane>
       <StackPane layoutX="235.0" layoutY="293.0" prefHeight="53.0" prefWidth="426.0">
          <children>
-            <Label text="Are you here for your current class?">
+            <Label fx:id="currentClassText" text="Are you here for your current class?">
                <font>
                   <Font name="Arial" size="22.0" />
                </font>
@@ -55,7 +55,7 @@
             <Button fx:id="btPiecharView" mnemonicParsing="false" onAction="#handelCalenderview" prefHeight="77.0" prefWidth="104.0" stylesheets="/attendance/automation/gui/css/CalendarButton.css" />
          </children>
       </HBox>
-      <HBox layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
+      <HBox fx:id="hBox" layoutX="379.0" layoutY="346.0" prefHeight="36.0" prefWidth="208.0">
          <children>
             <RadioButton fx:id="rbHeretoday" mnemonicParsing="false" text="Yes">
                <toggleGroup>
