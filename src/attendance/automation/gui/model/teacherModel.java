@@ -6,6 +6,7 @@
 package attendance.automation.gui.model;
 
 import attendance.automation.be.Student;
+import attendance.automation.dal.MockData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -17,11 +18,13 @@ public class teacherModel
 {
     private String username;
     private String password;
+    private MockData md;
     
     public teacherModel()
     {
         username = "jeppe";
         password = "baby";
+        md = new MockData();
     }
     
     public ObservableList classList()
@@ -49,22 +52,14 @@ public class teacherModel
 
     public String getUsername()
     {
-        return username;
+        return md.getUsernameTeacher();
     }
 
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
 
     public String getPassword()
     {
-        return password;
+        return md.getPasswordTeacher();
     }
 
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
     
 }

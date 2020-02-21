@@ -32,6 +32,22 @@ public class BLLManager {
    
    } 
     
+   public void getUsernameStudent()
+   {
+       md.getUsernameStudent();
+   }
+   public void getPasswordStudent()
+   {
+       md.getPasswordStudent();
+   }
+   public void getUsernameTeacher()
+   {
+       md.getUsernameTeacher();
+   }
+   public void getPasswordTeacher()
+   {
+       md.getPasswordTeacher();
+   }
 
     
  

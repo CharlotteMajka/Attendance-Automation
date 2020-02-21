@@ -42,11 +42,8 @@ public class SignInViewController implements Initializable
     private Button signInButton;
     @FXML
     private Label label;
+   
     
-    private String userStudent;
-    private String passStudent;
-    private String userTeacher;
-    private String passTeacher;
     private List<Student> StudentList;
     private StudentModel studentModel;
     private teacherModel teacherModel;
@@ -56,12 +53,6 @@ public class SignInViewController implements Initializable
     {
         studentModel = new StudentModel();
         teacherModel = new teacherModel();
-        
-        userStudent = "mads";
-        passStudent = "jensen";
-//        
-        userTeacher = "jeppe";
-        passTeacher = "baby";
     }    
 
     /**
@@ -77,7 +68,7 @@ public class SignInViewController implements Initializable
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
       
-      if(user.equals(studentModel.getUsername()) && pass.equals(studentModel.getPassword()))
+      if(user.equals(studentModel.getUsername().toLowerCase()) && pass.equals(studentModel.getPassword()))
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
          

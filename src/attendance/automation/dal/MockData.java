@@ -18,7 +18,59 @@ import javafx.collections.ObservableList;
  */
 public class MockData {
     
+    private String usernameStudent;
+    private String passwordStudent;
+    private String usernameTeacher;
+    private String passwordTeacher;
     
+    public MockData()
+    {
+     usernameStudent = "mads";
+     passwordStudent = "jensen";
+     usernameTeacher = "jeppe";
+     passwordTeacher = "baby";
+        
+    }
+
+    public String getUsernameStudent()
+    {
+        return usernameStudent;
+    }
+
+    public void setUsernameStudent(String usernameStudent)
+    {
+        this.usernameStudent = usernameStudent;
+    }
+
+    public String getPasswordStudent()
+    {
+        return passwordStudent;
+    }
+
+    public void setPasswordStudent(String passwordStudent)
+    {
+        this.passwordStudent = passwordStudent;
+    }
+
+    public String getUsernameTeacher()
+    {
+        return usernameTeacher;
+    }
+
+    public void setUsernameTeacher(String usernameTeacher)
+    {
+        this.usernameTeacher = usernameTeacher;
+    }
+
+    public String getPasswordTeacher()
+    {
+        return passwordTeacher;
+    }
+
+    public void setPasswordTeacher(String passwordTeacher)
+    {
+        this.passwordTeacher = passwordTeacher;
+    }
  
     
         
