@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
 import javafx.scene.chart.XYChart;
 
 /**
@@ -29,39 +30,18 @@ public class StudentModel {
         private final BLLManager bll;
         private String username;
         private String password;
+        private ObservableList<PieChart.Data> pieChartData;
+        
         
        public StudentModel(){
         bll = new BLLManager();
-       
-
-        
-
-       
        } 
         
-    public Student getoneStudent(String username, String password){
-       List<Student> listwithstudents = bll.getStudentList();
-        
-        Student stud = null;
-        for (Student student : listwithstudents)
-        {
-                
-             if(student.getUsername().equals(username) && student.getPassword().equals(password) ){
-                 
-                stud = student;
-                 break;
-                 
-             }
-        }
-        
-        return stud;     
- 
-    }
     
        
     public ObservableList<PieChart.Data> setPiechartData(){
         
-       ObservableList<PieChart.Data> pieChartData =   FXCollections.observableArrayList(
+       pieChartData =   FXCollections.observableArrayList(
         new PieChart.Data("Presence", 48),
         new PieChart.Data("Absent", 52));  
         
@@ -71,6 +51,22 @@ public class StudentModel {
         
     }
     
+
+
+//updates existing Data-Object if name matches
+public void addData()
+{
+    
+   for(Data d : pieChartData)
+    {
+        if(d.getName().equals("Absent"))
+        {
+            d.setPieValue(60);
+            return;
+        }
+    }
+    
+}
  
     
     public XYChart.Series setPresence(){

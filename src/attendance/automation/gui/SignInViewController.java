@@ -63,8 +63,8 @@ public class SignInViewController implements Initializable
         teacherModel = new teacherModel();
 
         
-        //userStudent = "mads";
-        //passStudent = "jensen";
+        userStudent = "mads";
+        passStudent = "jensen";
 //        
         userTeacher = "jeppe";
         passTeacher = "baby";
@@ -84,9 +84,9 @@ public class SignInViewController implements Initializable
       String user = username.getText();
       String pass = password.getText();
       Stage signInView = (Stage) ((Node) event.getSource()).getScene().getWindow();
-      this.stud = studentModel.getoneStudent(user, pass);
+     
 
-      if(stud instanceof Student)
+      if(user.equals(userStudent) && pass.equals(passStudent))
 
       {
           FXMLLoader fxmlLoader = new FXMLLoader();
