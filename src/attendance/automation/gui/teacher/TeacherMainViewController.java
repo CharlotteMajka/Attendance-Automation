@@ -53,6 +53,13 @@ public class TeacherMainViewController implements Initializable
         welcomeMessage.setAlignment(Pos.CENTER);
     }    
 
+    /**
+     * Button that sends the user to the next window when the user has
+     * chosen a class.
+     * If the user has not chosen a class, an alert will pop up. 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handleNext(ActionEvent event) throws IOException
     {
@@ -81,11 +88,19 @@ public class TeacherMainViewController implements Initializable
         }
     }
     
+    /**
+     * Populates the ListView
+     */
     public void populateList()
     {
         classListView.setItems(tm.classList());
     }
 
+    /**
+     * Button that logs the user out.
+     * @param event
+     * @throws Exception 
+     */
     @FXML
     private void handleLogOut(ActionEvent event) throws Exception
     {

@@ -71,6 +71,11 @@ public class TeacherClassViewController implements Initializable
         classTableView.getSortOrder().addAll(absenceProcent);
     }    
 
+    /**
+     * Button that sends the user back to the TeacherMainView. 
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handleBack(ActionEvent event) throws IOException
     {
@@ -87,6 +92,9 @@ public class TeacherClassViewController implements Initializable
         oldStage.close();
     }
     
+    /**
+     * Populates the TableView.
+     */
     private void populateList()
     {
         name.setCellValueFactory(new PropertyValueFactory<Student, String>("name"));
@@ -95,6 +103,9 @@ public class TeacherClassViewController implements Initializable
         classTableView.setItems(tm.studentList());
     }
     
+    /**
+     * Fills the pie chart with information.
+     */
     private void fillPieChart()
     {
         int totalAbsence = 0;
